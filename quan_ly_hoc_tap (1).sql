@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 24, 2021 at 07:26 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 25, 2021 lúc 04:47 AM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,93 +18,84 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `quan_ly_hoc_tap`
+-- Cơ sở dữ liệu: `quan_ly_hoc_tap`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `btl`
+-- Cấu trúc bảng cho bảng `btl`
 --
 
 CREATE TABLE `btl` (
-  `ma_dt` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ten_dt` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ten_nhom` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `ma_mon_hoc` int(100) NOT NULL,
+  `ma_btl` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `ten_btl` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `ma_nhom` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `btl`
+-- Đang đổ dữ liệu cho bảng `btl`
 --
 
-INSERT INTO `btl` (`ma_dt`, `ten_dt`, `ten_nhom`) VALUES
-('12', 'Thiết kế giao diện web nhà hàng', 'nhom1');
+INSERT INTO `btl` (`ma_mon_hoc`, `ma_btl`, `ten_btl`, `ma_nhom`) VALUES
+(0, '12', 'Thiết kế giao diện web nhà hàng', 'nhom1');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `btvn`
+-- Cấu trúc bảng cho bảng `btvn`
 --
 
 CREATE TABLE `btvn` (
-  `ma_btvn` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ma_mh` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ten_btvn` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `time_start` datetime NOT NULL,
-  `time_finish` datetime NOT NULL,
-  `phat` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `btvn`
---
-
-INSERT INTO `btvn` (`ma_btvn`, `ma_mh`, `ten_btvn`, `time_start`, `time_finish`, `phat`) VALUES
-('1', 'mh1', 'Thiết kế giao diện web nhà hàng', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '-1d');
+  `ma_bt` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `ma_mon_hoc` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `ten_bt` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `thoigian_bd` datetime NOT NULL,
+  `thoigian_kt` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `luutru`
+-- Cấu trúc bảng cho bảng `luutru_btl`
 --
 
-CREATE TABLE `luutru` (
-  `ma_btvn` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `diem` int(11) NOT NULL,
-  `time_nop` datetime NOT NULL,
-  `nguoithamgia` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `luutru`
---
-
-INSERT INTO `luutru` (`ma_btvn`, `diem`, `time_nop`, `nguoithamgia`) VALUES
-('1', 7, '0000-00-00 00:00:00', 0);
+CREATE TABLE `luutru_btl` (
+  `ma_btl` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `ma_nhom` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `monhoc`
+-- Cấu trúc bảng cho bảng `luutru_btvn`
+--
+
+CREATE TABLE `luutru_btvn` (
+  `ma_bt` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `nguoi_nop` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `bai_lam` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `thoi_gian_nop` datetime NOT NULL,
+  `diem` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `monhoc`
 --
 
 CREATE TABLE `monhoc` (
-  `ma_mh` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ten_mh` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ma_gv` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `monhoc`
---
-
-INSERT INTO `monhoc` (`ma_mh`, `ten_mh`, `ma_gv`) VALUES
-('mh1', 'Công nghệ web', 'gv1');
+  `ma_mon_hoc` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `ten_mon_hoc` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `ma_nd` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nguoidung`
+-- Cấu trúc bảng cho bảng `nguoidung`
 --
 
 CREATE TABLE `nguoidung` (
@@ -122,7 +113,7 @@ CREATE TABLE `nguoidung` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `nguoidung`
+-- Đang đổ dữ liệu cho bảng `nguoidung`
 --
 
 INSERT INTO `nguoidung` (`ma_nd`, `anh`, `tai_khoan`, `mat_khau`, `ho_ten`, `ngay_sinh`, `gioi_tinh`, `dia_chi`, `email`, `sdt`, `ma_pl`) VALUES
@@ -133,26 +124,20 @@ INSERT INTO `nguoidung` (`ma_nd`, `anh`, `tai_khoan`, `mat_khau`, `ho_ten`, `nga
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nhom`
+-- Cấu trúc bảng cho bảng `nhom`
 --
 
 CREATE TABLE `nhom` (
-  `ma_nhom` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ten_nhom` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tenthanhvien` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `nhom`
---
-
-INSERT INTO `nhom` (`ma_nhom`, `ten_nhom`, `tenthanhvien`) VALUES
-('n1', 'nhom1', 'Vũ Thị Thủy');
+  `ma_nhom` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `ten_nhom` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `ma_mon_hoc` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `thanh_vien` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phanloai`
+-- Cấu trúc bảng cho bảng `phanloai`
 --
 
 CREATE TABLE `phanloai` (
@@ -161,7 +146,7 @@ CREATE TABLE `phanloai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `phanloai`
+-- Đang đổ dữ liệu cho bảng `phanloai`
 --
 
 INSERT INTO `phanloai` (`ma_pl`, `ten_pl`) VALUES
@@ -170,28 +155,28 @@ INSERT INTO `phanloai` (`ma_pl`, `ten_pl`) VALUES
 ('sv', 'sinh viên');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `nguoidung`
+-- Chỉ mục cho bảng `nguoidung`
 --
 ALTER TABLE `nguoidung`
   ADD PRIMARY KEY (`ma_nd`),
   ADD KEY `ma_pl` (`ma_pl`);
 
 --
--- Indexes for table `phanloai`
+-- Chỉ mục cho bảng `phanloai`
 --
 ALTER TABLE `phanloai`
   ADD PRIMARY KEY (`ma_pl`);
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `nguoidung`
+-- Các ràng buộc cho bảng `nguoidung`
 --
 ALTER TABLE `nguoidung`
   ADD CONSTRAINT `nguoidung_ibfk_1` FOREIGN KEY (`ma_pl`) REFERENCES `phanloai` (`ma_pl`);
