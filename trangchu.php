@@ -85,21 +85,41 @@
 
                 <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" >
-                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 40px"></i>
+                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 30px"></i>
                     <span>Tên người dùng</span> 
                 <span class="caret" style="padding-left: 30px"></span></button>
                     <ul class="dropdown-menu" style="padding-left: 20px">
-                      <li><a href="#">HTML</a></li>
-                      <li><a href="#">CSS</a></li>
-                      <li><a href="#">JavaScript</a></li>
+                      <li><a href="#">Thông tin tài khoản</a></li>
+                      <li><a href="#">Đổi mật khẩu</a></li>
                       <li class="divider"></li>
-                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Thoát</a></li>
                     </ul>
               </div>
                     
                 </div>
             </nav>
 
+            <div class="card">
+                <h5 class="card-header">TÊN MÔN HỌC</h5>
+                <div class="card-body">
+                    <h5 class="card-title">TÊN BÀI TẬP</h5>
+                    <p class="card-text">
+                        <b>Opened :</b> Thursday, 23 September 2021 </br>
+                        <b>Due :</b> Sunday, 26 September 2021 
+                    </p>            
+                </div>
+            </div>
+                <br/>
+            <div class="card">
+                <h5 class="card-header">TÊN MÔN HỌC</h5>
+                <div class="card-body">
+                    <h5 class="card-title">TÊN BÀI TẬP</h5>
+                    <p class="card-text">
+                        <b>Opened :</b> Thursday, 23 September 2021 </br>
+                        <b>Due :</b> Sunday, 26 September 2021 
+                    </p>            
+                </div>
+            </div>
             
         </div>
     </div>
