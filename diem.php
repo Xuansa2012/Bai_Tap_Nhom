@@ -1,58 +1,59 @@
-<?php
-define('host', 'localhost');
-define('user', 'root');
-define('pass', '');
-define('db', 'quan_ly_hoc_tap');
-$connect=mysqli_connect(host,user,pass,db);
-mysqli_set_charset($connect,'utf8');
-if(!$connect){
-  die('kết nối không thành công');
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-?>
- <table class="table" id="table">
+<div class="container">
+  <h2>USER</h2>
+  
+  <table class="table">
     <thead>
       <tr>
-        <th>stt</th>
-        <th>Danh sách môn học</th>
-        <th>Bài tập về nhà</th>
-        <th>Bài tập lớn</th>
+        <th>Mục điểm</th>
+        <th>Khối</th>
         <th>Điểm</th>
-        <th>Xóa</th>
-     
       </tr>
     </thead>
-
     <tbody>
-    // <?php
-    //$result=mysqli_query($connect,$sql);
-    //if(mysqli_num_rows($result)>0){
-        // $i=1;
-        // while ($row=mysqli_fetch_assoc($result)) {
-
-            //?>
-       <tr>
-        <td><?php echo $row['stt'];?></td>
-        <td><?php echo $row['mon_hoc'];?></td>
-        <td><?php echo $row['btvn'];?></td>
-        <td><?php echo $row['btl'];?></td>
-        <td><?php echo $row['diem'];?></td>
-        <td><?php echo $row['xóa'];?></td>
+      <tr>
+        <td>CÔNG NGHỆ WEB</td>
         
-         <!-- <td><a href="change.php?id=<?php echo $row['id'];?>"><i class="fas fa-edit"></i> </a></td> -->
-        <!-- <td><a href="delete.php?id=<?php echo $row['id'];?>"><i class="fas fa-trash"></i> </a></td> -->
-        <td><button style="border:0px;background-color: #fff; " onclick="suasv('')"><i class="fas fa-edit" style="color: red;"></i> </button></td>
-        <td><button style="border:0px;background-color: #fff; " onclick="xoasv('')"><i class="fas fa-trash" style="color: red;"></i> </button></td>
+      </tr>      
+      <tr class="success">
+        <td>Bài tập lớn</td>
+        <td>K61</td>
+        <td></td>
+      
+      <tr class="danger">
+        <td>Thiết kế giao diện</td>
+        <td>K61</td>
+        <td></td>
+
+        <tr>
+        <td>TRÍ TUỆ NHÂN TẠO</td>
+        
+      </tr> 
+        <tr class="info">
+        <td>BT1-Tìm kiếm chiều sâu hạn chế</td>
+        <td>K61</td>
+        <td></td>
       </tr>
-
-    <?php
-       $i++;
-      }
-
-    }
-    ?>
-
-     
+      <tr class="warning">
+        <td>BT2-Tìm kiếm theo chiều rộng</td>
+        <td>K61</td>
+        <td></td>
+      </tr>
       
     </tbody>
   </table>
+</div>
+
+</body>
+</html>
