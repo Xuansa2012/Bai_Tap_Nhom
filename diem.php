@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Trang chủ | Điểm</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -11,48 +11,38 @@
 <body>
 
 <div class="container">
-  <h2>USER</h2>
-  
+  <h2 style="font-size: 25px">BẢNG ĐIỂM</h2>
+  <br/>
   <table class="table">
-    <thead>
-      <tr>
-        <th>Mục điểm</th>
-        <th>Khối</th>
-        <th>Điểm</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>CÔNG NGHỆ WEB</td>
-        
-      </tr>      
-      <tr class="success">
-        <td>Bài tập lớn</td>
-        <td>K61</td>
-        <td></td>
-      
-      <tr class="danger">
-        <td>Thiết kế giao diện</td>
-        <td>K61</td>
-        <td></td>
-
-        <tr>
-        <td>TRÍ TUỆ NHÂN TẠO</td>
-        
-      </tr> 
-        <tr class="info">
-        <td>BT1-Tìm kiếm chiều sâu hạn chế</td>
-        <td>K61</td>
-        <td></td>
-      </tr>
-      <tr class="warning">
-        <td>BT2-Tìm kiếm theo chiều rộng</td>
-        <td>K61</td>
-        <td></td>
-      </tr>
-      
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Tên Bài Tập </th>
+      <th scope="col">Họ và Tên</th>
+      <th scope="col">Điểm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td></td>
+      <td>@twitter</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
 </body>
