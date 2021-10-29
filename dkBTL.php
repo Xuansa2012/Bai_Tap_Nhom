@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Trang chủ | Bài Tập Lớn</title>
+    <title>Trang chủ | Đăng ký Bài Tập Lớn</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -93,38 +93,62 @@
             </nav>
 
             <div class="container mt-4">
-      <h2 style="font-size: 20px">BÀI TẬP LỚN</h2>
-      <br/>
+      <h2 style="font-size: 28px"> ĐỀ TÀI BÀI TẬP LỚN</h2>
       <br/>
       <table class="table">
       <thead>
         <tr>
           <th scope="col">STT</th>
           <th scope="col">Nhóm</th>
-          <th scope="col">Thành viên</th>
           <th scope="col">Đề tài</th>
+          <th scope="col">Tham gia</th>
         </tr>
       </thead>
       <tbody>
         <tr>
   
           <td>1</td>
-          <td>4</td>
-          <td>Lèng Xuân Sa<br/> Nguyễn Thị Yến <br/> Vũ Thị Thủy
+          <td>1</td>
+          <td>Xây dựng website cá nhân cho giáo viên</td>
+          <td><div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault"></label>
           </td>
-          <td>Xây dựng website hỗ trợ quản lý học tập</td>
         </tr>
-        
+        <tr>
+          
+          <td>2</td>
+          <td>2</td>
+          <td>Xây dựng website cựu sinh viên Viện CNTT-TT</td>
+          <td><div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault"></label>
+          </td>
+        </tr>
+        <tr>
+          
+          <td>3</td>
+          <td>3</td>
+          <td>Xây dựng website giới thiệu và đặt sách trực tuyến</td>
+          <td><div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault"></label>
+          </td>
+        </tr>
+        <tr>
+         
+          <td>4</td>
+          <td>4</td>
+          <td>Xây dựng website hỗ trợ quản lý học tập</td>
+          <td><div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault"></label>
+          </td>
+        </tr>
       </tbody>
     </table>
-    <br/>
-      <form action="upload.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="fileToUpload" id="fileToUpload">
-        </form>
-    <br/>
-    <button type="button" class="btn btn-outline-secondary">Nộp</button>
+    <button type="button" class="btn btn-outline-secondary">Đăng kí</button>
     </div>
-
     
         </div>   
     </div>
