@@ -30,11 +30,45 @@
 
 <body>
 
+<div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>                   
+                    </button>
+                    
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" >
+                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 40px"></i>
+                    <span>Tên người dùng</span> 
+                <span class="caret" style="padding-left: 30px"></span></button>
+                    <ul class="dropdown-menu" style="padding-left: 50px">
+                      <li><a href="#">Thủy Vũ Thị</a></li>
+                      <li><a href="#">Nguyẽn Yến</a></li>
+                      <li><a href="#">JavaScript</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">About Us</a></li>
+                    </ul>
+              </div>
+                    
+                </div>
+            </nav>
+
+            
+        </div>
+    </div>
+    
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <img src="images/logo-small.png" height="50px" width="70px">
+                <img src="images/logo-small.png" height="150px" width="150x">
             </div>
 
             <ul class="list-unstyled components">
@@ -50,81 +84,26 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="btvn.php">Bài Tập Về Nhà</a>
+                    <a href="#">Bài Tập Về Nhà</a>
                 </li>
                 <li>
+                    
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bài tập lớn </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/DSachBTL.php"">Danh sách BTL</a>
+                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/DSachBTL.php">Danh sách BTL</a>
                         </li>
                         <li>
-                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/yeucau.php">Yêu câu chung</a>
+                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/yeucau.php">Yêu cầu chung</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/diemGV.php">Điểm</a>
+                    <a href="#">Điểm</a>
                 </li>
             </ul>
         </nav>
-
-        <!-- Page Content  -->
-        <div id="content">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>                   
-                    </button>
-                    
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
-
-                <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" >
-                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 30px"></i>
-                    <span>Tên người dùng</span> 
-                <span class="caret" style="padding-left: 30px"></span></button>
-                    <ul class="dropdown-menu" style="padding-left: 20px">
-                      <li><a href="#">Thông tin tài khoản</a></li>
-                      <li><a href="#">Đổi mật khẩu</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#">Thoát</a></li>
-                    </ul>
-              </div>
-                    
-                </div>
-            </nav>
-
-            <div class="card">
-                <h5 class="card-header">TÊN MÔN HỌC</h5>
-                <div class="card-body">
-                    <h5 class="card-title">TÊN BÀI TẬP</h5>
-                    <p class="card-text">
-                        <b>Opened :</b> Thursday, 23 September 2021 </br>
-                        <b>Due :</b> Sunday, 26 September 2021 
-                    </p>            
-                </div>
-            </div>
-                <br/>
-            <div class="card">
-                <h5 class="card-header">TÊN MÔN HỌC</h5>
-                <div class="card-body">
-                    <h5 class="card-title">TÊN BÀI TẬP</h5>
-                    <p class="card-text">
-                        <b>Opened :</b> Thursday, 23 September 2021 </br>
-                        <b>Due :</b> Sunday, 26 September 2021 
-                    </p>            
-                </div>
-            </div>
-            
-        </div>
-    </div>
-
-    <script type="text/javascript">
+        <script type="text/javascript">
         $(document).ready(function () {
             $("#sidebar").mCustomScrollbar({
                 theme: "minimal"
@@ -138,5 +117,3 @@
         });
     </script>
 </body>
-
-</html>

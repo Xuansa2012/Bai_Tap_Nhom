@@ -11,29 +11,31 @@
 <body>
 
 <div class="container">
-  <h2>USER</h2>
+  <h2>ĐIỂM</h2>
   
   <table class="table">
     <thead>
       <tr>
-        <th>Mục điểm</th>
-        <th>Khối</th>
-        <th>Điểm</th>
+        <th>STT</th>
+        <th>Môn</th>
+        <th>Lớp</th>
+        <th>Điểm BTL</th>
+        <th>Điểm BTVN Tuần1</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>CÔNG NGHỆ WEB</td>
-        
-      </tr>      
+           
       <tr class="success">
-        <td>Bài tập lớn</td>
-        <td>K61</td>
+        <th>1</th>
+        <th>Công nghệ web</th>
+        <td>61HT</td>
+        <td></td>
         <td></td>
       
       <tr class="danger">
-        <td>Thiết kế giao diện</td>
-        <td>K61</td>
+        <td>2</td>
+        <th></th>
+        <td>61TH1</td>
         <td></td>
 
         <tr>

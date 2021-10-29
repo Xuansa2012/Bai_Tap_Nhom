@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Trang chủ | Môn học</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -11,7 +11,7 @@
 <body>
 
 <div class="jumbotron text-center">
-  <h1 style="font-size: 30px">NỀN TẢNG PHÁT TRIỂN WEB</h1>
+  <h1>TRÍ TUỆ NHÂN TẠO</h1>
   <p></p> 
 </div>
   
@@ -19,33 +19,20 @@
   <div class="row">
     <div class="col-sm-4">
       <h3></h3>
-      <img src="images/mon2.jpg" height="200px" width="300x">
+      <img src="images/unnamed.png" height="200px" width="300x">
       <p>TLU-CSE</p> 
-      <a href="#">Nền tảng phát triển web </a>
-      
+      <font color="red">Trí tuệ nhân tạo(AI)</font>
        </div>
-       
-    <div class="col-sm-4" style="margin-top: 20px">
-    <ul style="font-size: 23px;">
-     <li>
-        <a href="https://drive.google.com/drive/folders/1pdoyagQcErxNHfu60mIKwmUDEBx9tJq1" style="color: black">Thông tin môn học</a>
-     </li>
-     <li>
-     <a href="https://drive.google.com/drive/folders/19rrbRdXp_oJsCZqX5pioiz6zo53ZSpWy?usp=sharing" style="color: black">Tài liệu môn học</a>
-     </li>
-     <li><a href="https://drive.google.com/drive/folders/1HqwqpNGZGqUYGpkNJNspRmdGsvhHz8XD" style="color: black">Phần mềm dùng trong môn học</a></li>
-     </ul>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
-
-    <div class="col-md-4" style="margin-top: 8px">
-      <h1 style="font-size: 25px"> Bài tập</h1>
-      <ul>
-        <li style="font-size: 20px">Bài tập 1: </li>
-        <li style="font-size: 20px">Bài tập 2: </li>
-      </ul>
-
+    <div class="col-sm-4">
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
-    
   </div>
 </div>
 

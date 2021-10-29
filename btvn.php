@@ -39,8 +39,8 @@
 
             <div class="col-md-4">
                 <i class="fas fa-book fa-3x cyan-text"></i>
-                <h5 class="font-weight-bold my-4">Chủ đề 1</h5>
-                <a href="#"><p class="grey-text mb-md-0 mb-5">Đề bài bài 1</p></a>
+                <h5 class="font-weight-bold my-4">Cơ sở dữ liệu</h5>
+                <a href="baitap.php" ><p class="mb-md-0 mb-5" style="color: #003959;">Tạo cơ sở dữ liệu quản lý sinh viên</p></a>
                 <p> <strong>Opened :</strong> Thursday, 23 September 2021 </br>
                     <strong>Due :</strong> Sunday, 26 September 2021 
                 </p>
@@ -49,8 +49,8 @@
          
             <div class="col-md-4">
                 <i class="fas fa-book fa-3x cyan-text"></i>
-                <h5 class="font-weight-bold my-4">Chủ đề 2</h5>
-                <a href="#"><p class="grey-text mb-md-0 mb-5">Bài tập bài 2</p></a>
+                <h5 class="font-weight-bold my-4">Công nghệ web</h5>
+                <a href="#"><p class=" mb-md-0 mb-5" style="color: #003959">Thiết kế fontend cho nhà hàng</p></a>
                 <p> <strong>Opened :</strong> Thursday, 23 September 2021 </br>
                     <strong>Due :</strong> Sunday, 26 September 2021 
                 </p>
@@ -58,8 +58,8 @@
             
             <div class="col-md-4">
                 <i class="fas fa-book fa-3x cyan-text"></i>
-                <h5 class="font-weight-bold my-4">Chủ đề 3</h5>
-                <a href="#"><p class="grey-text mb-0">Bài tập bài 3</p></a>
+                <h5 class="font-weight-bold my-4">Hệ điều hành</h5>
+                <a href="#"><p class=" mb-0" style="color: #003959">Bài Tập Trang 65</p></a>
                 <p> <strong>Opened :</strong> Thursday, 23 September 2021 </br>
                     <strong>Due :</strong> Sunday, 26 September 2021 
                 </p>

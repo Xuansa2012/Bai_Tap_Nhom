@@ -22,7 +22,7 @@
   <div class="alert alert-warning">
     <strong></strong> 
   </div>
-  <button type="button" class="btn">Nộp bài</button>
+  <button type="button" onclick="alert('Nộp thành công!')">Nộp</button>
 </div>
 
 </body>

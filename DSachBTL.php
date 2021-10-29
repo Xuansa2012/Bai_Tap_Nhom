@@ -11,7 +11,7 @@
 <body>
 
 <div class="container">
-  <h2>ĐĂNG KÍ ĐỀ TÀI BÀI TẬP LỚN</h2>
+  <h2>DANH SÁCH ĐỀ TÀI BÀI TẬP LỚN</h2>
   <p></p>            
   <table class="table">
    
@@ -19,7 +19,7 @@
         <th>STT</th>
         <th>Tên nhóm</th>
         <th>Thành viên nhóm</th>
-        <th>Tên đề tài đăng kí</th>
+        <th>Đề tài đã đăng kí</th>
         
       </tr>
     </thead>
