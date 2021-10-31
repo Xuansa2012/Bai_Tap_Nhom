@@ -36,49 +36,34 @@
     <div class="wrapper">
         <!-- Sidebar  -->
         <div class="header">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <img src="images/logo-small.png" height="70px" width="100px">
-                <p style="color: white;">Trí tuệ nhân tạo</p>
+            <nav id="sidebar">
+                <div class="sidebar-header" style="color: white;">
+                <img src="cnweb.png" height="70px" width="150px">
+                <p style="color: white;">Công nghệ web</p>
             </div>
 
-            <ul class="list-unstyled components">
-                
-                
-                <li>
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bài tập lớn </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/DSachBTL.php"">Danh sách BTL</a>
-                        </li>
-                        <li>
-                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/yeucau.php">Yêu câu chung</a>
-                        </li>
-                    </ul>
-                </li>
-                
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Điểm </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/diemBTL.php">Điểm BTL</a>
-                        </li>
-                        <li>
-                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/diemBTVN.php">Điểm BTVN</a>
-                        </li>
-                    </ul>
-                </li>
-        
-               
-                <li>
-                    <a href="btvn.php">Bài Tập Về Nhà</a>
-                </li>
-                <li>
-                    <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/QLySV.php#">Quản lý sinh viên</a>
-                </li>
-               
-            </ul>
-        </nav>
+
+                <ul class="list-unstyled components">
+                    
+                    <li>
+                        <a href="btvn.php">Bài Tập</a>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bài tập lớn </a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="BTL.php">Bài tập lớn</a>
+                            </li>
+                            <li>
+                                <a href="#">Đăng ký BTL</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="diemBT.php">Điểm</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
 
         <!-- Page Content  -->
@@ -141,7 +126,7 @@
                 <input type="text" class="form-control" id="formGroupExampleInput2">
               </div>
               <br/>
-              <button type="button" onclick="alert('Thêm thành công!')">Thêm</button>
+              <input type="submit" value="Sửa">
             </form>
     
         </div>   
