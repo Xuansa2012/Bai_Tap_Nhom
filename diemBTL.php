@@ -102,45 +102,106 @@
                     
                 </div>
             </nav>
-            
             <div class="container">
-              <h2>DANH SÁCH ĐỀ TÀI BÀI TẬP LỚN</h2>
-              <p></p>            
-              <table class="table">
-              
-                  <tr>
-                    <th>STT</th>
-                    <th>Tên nhóm</th>
-                    <th>Thành viên nhóm</th>
-                    <th>Đề tài đã đăng kí</th>
-                    
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Nhóm 1</td>
-                    <td><br>Vũ Thị Thủy</br>
-                      <br>Nguyễn Thị Yến </br>
-                      <br> Lèng Xuân Sa</br>
-                    </td>
-                    <td>Xây dựng website hỗ trợ quản lý học tập</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Nhóm 2</td>
-                    <td>Vũ Thị Phương</td>
-                    <td>Xây dựng website hỗ trợ quản lý học tập</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Nhóm 3</td>
-                    <td>Nguyễn Thị Anh</td>
-                    <td>Xây dựng website hỗ trợ quản lý học tập</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                  <h2>ĐIỂM BTL</h2>
+                  
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>STT</th>
+                      
+                        <th>Nhóm</th>
+                        <th>Đề tài BTL</th>
+                        <th>Điểm BTL</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>CÔNG NGHỆ WEB</td>
+                        
+                      </tr>      
+                      <tr class="success">
+                        <td>1</td>
+                        <td>Nhóm 1</td>
+                        <td>Thiết kế giao diện</td>
+                        <td>-</td>
+                      
+                      <tr class="danger">
+                        <td>2</td>
+                        <td>Nhóm 2</td>
+                        <td>Thiết kế giao diện nhà hàng</td>
+                        <td>-</td>
 
+                        <tr>
+                        <td>TRÍ TUỆ NHÂN TẠO</td>
+                        
+                        </tr> 
+                        <tr class="info">
+                        <td>1</td>
+                        <td>Nhóm 1</td>
+                        <td>Tìm kiếm theo chiều rộng</td>
+                        <td>-</td>
+                      </tr>
+                      <tr class="warning">
+                        <td>2</td>
+                        <td>Nhóm 2</td>
+                        <td>Tìm kiếm theo chiều sâu</td>
+                        <td>-</td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#sidebar").mCustomScrollbar({
+                            theme: "minimal"
+                        });
+
+                        $('#sidebarCollapse').on('click', function () {
+                            $('#sidebar, #content').toggleClass('active');
+                            $('.collapse.in').toggleClass('in');
+                            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                        });
+                    });
+                </script>
+                <section >
+            <div class="container my-5 py-5">
+                <div class="row d-flex ">
+                <div class="col-md-12 col-lg-10 col-xl-8" >
+                    <div class="card">
+                
+                    <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+                        <div class="d-flex flex-start w-100">
+                        <img
+                            class="rounded-circle shadow-1-strong me-3"
+                            src="https://mdbootstrap.com/img/Photos/Avatars/img%20(19).jpg"
+                            alt="avatar"
+                            width="40"
+                            height="40"
+                        />
+                        <div class="form-outline w-100">
+                            <textarea
+                            class="form-control"
+                            id="textAreaExample"
+                            rows="4"
+                            style="background: #fff;"
+                            ></textarea>
+                            <label class="form-label" for="textAreaExample">What is your question?</label>
+                        </div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-3" style="float: right;">
+
+                            <button type="button" class="btn ">
+                                Send <i class="fas fa-long-arrow-alt-right ms-1"></i>
+                            </button>
+
+                            </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
 </body>
 </html>

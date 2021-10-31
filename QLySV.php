@@ -40,9 +40,22 @@
 
             <ul class="list-unstyled components">
                 
+                
                 <li>
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Điểm </a>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bài tập lớn </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/DSachBTL.php"">Danh sách BTL</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/yeucau.php">Yêu câu chung</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Điểm </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
                             <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/diemBTL.php">Điểm BTL</a>
                         </li>
@@ -52,17 +65,7 @@
                     </ul>
                 </li>
         
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bài tập lớn </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/DSachBTL.php"">Danh sách BTL</a>
-                        </li>
-                        <li>
-                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/yeucau.php">Yêu câu chung</a>
-                        </li>
-                    </ul>
-                </li>
+               
                 <li>
                     <a href="btvn.php">Bài Tập Về Nhà</a>
                 </li>
@@ -102,45 +105,62 @@
                     
                 </div>
             </nav>
-            
+                        
             <div class="container">
-              <h2>DANH SÁCH ĐỀ TÀI BÀI TẬP LỚN</h2>
-              <p></p>            
-              <table class="table">
-              
-                  <tr>
+            <h2>DANH SÁCH QUẢN LÝ SINH VIÊN</h2>
+            <button type="<button type="button" class="btn btn-info"> <a href="them.php">Thêm</a></button>
+                     
+            <table class="table">
+                <thead>
+                <tr>
                     <th>STT</th>
-                    <th>Tên nhóm</th>
-                    <th>Thành viên nhóm</th>
-                    <th>Đề tài đã đăng kí</th>
-                    
-                  </tr>
+                    <th>Họ và tên</th>
+                    <th>Địa chỉ</th>
+                    <th>Ngày sinh</th>
+                    <th>Giới tính</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Xóa</th>
+                </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                <tr>
                     <td>1</td>
-                    <td>Nhóm 1</td>
-                    <td><br>Vũ Thị Thủy</br>
-                      <br>Nguyễn Thị Yến </br>
-                      <br> Lèng Xuân Sa</br>
-                    </td>
-                    <td>Xây dựng website hỗ trợ quản lý học tập</td>
-                  </tr>
-                  <tr>
+                    <td>Nguyễn Thị Yến</td>
+                    <td>Hưng Yên</td>
+                    <td>16/10/2001</td>
+                    <td>Nữ</td>
+                    <td>yennguyen@gmail.com</td>
+                    <td>0333523851</td>
+                    <td><i class="fas fa-trash"></i></td>
+                    
+                  
+                </tr>
+                <tr>
                     <td>2</td>
-                    <td>Nhóm 2</td>
-                    <td>Vũ Thị Phương</td>
-                    <td>Xây dựng website hỗ trợ quản lý học tập</td>
-                  </tr>
-                  <tr>
+                    <td>Nguyễn Văn An</td>
+                    <td>Nam Đinh</td>
+                    <td>3/10/2001</td>
+                    <td>Nam</td>
+                    <td>nvan@gmail.com</td>
+                    <td>0333523851</td>
+                    <td><i class="fas fa-trash"></i></td>
+                </tr>
+                <tr>
                     <td>3</td>
-                    <td>Nhóm 3</td>
-                    <td>Nguyễn Thị Anh</td>
-                    <td>Xây dựng website hỗ trợ quản lý học tập</td>
-                  </tr>
+                    <td>Vũ Thị Thủy</td>
+                    <td>Hà Nội</td>
+                    <td>16/10/2001</td>
+                    <td>Nữ</td>
+                    <td>thuyvuthi27@gmail.com</td>
+                    <td>0333523851</td>  
+                    <td><i class="fas fa-trash"></i></td>
+                </tr>
+                
                 </tbody>
-              </table>
+            </table>
             </div>
+            
 
 </body>
 </html>

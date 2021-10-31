@@ -25,7 +25,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
+    <style>
+      p {
+  color: black;
+  margin-top: 10px;
+  margin-left: 100px;
+} 
+font {
+  margin-left: 70px;
+  margin-bottom:50px;
+  font-size: 20px;
+  
+}
+  </style>
 </head>
 
 <body>
@@ -72,7 +84,6 @@
                
             </ul>
         </nav>
-
         <!-- Page Content  -->
         <div id="content">
 
@@ -102,45 +113,14 @@
                     
                 </div>
             </nav>
-            
-            <div class="container">
-              <h2>DANH SÁCH ĐỀ TÀI BÀI TẬP LỚN</h2>
-              <p></p>            
-              <table class="table">
-              
-                  <tr>
-                    <th>STT</th>
-                    <th>Tên nhóm</th>
-                    <th>Thành viên nhóm</th>
-                    <th>Đề tài đã đăng kí</th>
-                    
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Nhóm 1</td>
-                    <td><br>Vũ Thị Thủy</br>
-                      <br>Nguyễn Thị Yến </br>
-                      <br> Lèng Xuân Sa</br>
-                    </td>
-                    <td>Xây dựng website hỗ trợ quản lý học tập</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Nhóm 2</td>
-                    <td>Vũ Thị Phương</td>
-                    <td>Xây dựng website hỗ trợ quản lý học tập</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Nhóm 3</td>
-                    <td>Nguyễn Thị Anh</td>
-                    <td>Xây dựng website hỗ trợ quản lý học tập</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
+            <font color="blue">YÊU CẦU CHUNG:</font>
+              <p>-Yêu cầu SV làm đầy đủ btvn cũng như btl của mình.</p>
+              <p>-Không có nhóm nào trùng đề tài.</p>
+              <p>-Khuyến nghị các nhóm thiết kế và xây dựng website theo mô hình MVC hoặc sửdụng một framework
+          có sẵn của PHP.</p>
+              <p>-Yêu cầu các nhóm đảm bảo các vấn đề security được học trên lớp trong sản phẩm của nhóm.</p>
+              <p>-Các mô tả về các đề tài sau đây chỉ là gợi ý ở mức cơ bản, sinh viên có thể trao đổi thêm với giáo viên
+          về việc phát triển thêm cho hoàn thiện hệ thống</p>
+              <p>-Có thể đề xuất thêm/sửa các chức năng cho phù hợp với website.</p>
 </body>
 </html>

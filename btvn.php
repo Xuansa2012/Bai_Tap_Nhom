@@ -27,48 +27,113 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
 </head>
-<div class="container">
 
-    <section class="text-center my-5">
-
-        <h2 class="h1-responsive font-weight-bold my-5">HOME WORK</h2>
-
-        <p class="lead grey-text w-responsive mx-auto mb-5"> <b><i>Note:</i></b> Nộp sau thời gian quy định sẽ không được chấm</p>
-
-        <div class="row">
-
-            <div class="col-md-4">
-                <i class="fas fa-book fa-3x cyan-text"></i>
-                <h5 class="font-weight-bold my-4">Cơ sở dữ liệu</h5>
-                <a href="baitap.php" ><p class="mb-md-0 mb-5" style="color: #003959;">Tạo cơ sở dữ liệu quản lý sinh viên</p></a>
-                <p> <strong>Opened :</strong> Thursday, 23 September 2021 </br>
-                    <strong>Due :</strong> Sunday, 26 September 2021 
-                </p>
-
-            </div>
-         
-            <div class="col-md-4">
-                <i class="fas fa-book fa-3x cyan-text"></i>
-                <h5 class="font-weight-bold my-4">Công nghệ web</h5>
-                <a href="#"><p class=" mb-md-0 mb-5" style="color: #003959">Thiết kế fontend cho nhà hàng</p></a>
-                <p> <strong>Opened :</strong> Thursday, 23 September 2021 </br>
-                    <strong>Due :</strong> Sunday, 26 September 2021 
-                </p>
-            </div>
-            
-            <div class="col-md-4">
-                <i class="fas fa-book fa-3x cyan-text"></i>
-                <h5 class="font-weight-bold my-4">Hệ điều hành</h5>
-                <a href="#"><p class=" mb-0" style="color: #003959">Bài Tập Trang 65</p></a>
-                <p> <strong>Opened :</strong> Thursday, 23 September 2021 </br>
-                    <strong>Due :</strong> Sunday, 26 September 2021 
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-</div>
 <body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="images/logo-small.png" height="70px" width="100px">
+                <p style="color: white;">Trí tuệ nhân tạo</p>
+            </div>
+
+            <ul class="list-unstyled components">
+                
+                
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bài tập lớn </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/DSachBTL.php"">Danh sách BTL</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/yeucau.php">Yêu câu chung</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Điểm </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/diemBTL.php">Điểm BTL</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/diemBTVN.php">Điểm BTVN</a>
+                        </li>
+                    </ul>
+                </li>
+        
+               
+                <li>
+                    <a href="btvn.php">Bài Tập Về Nhà</a>
+                </li>
+                <li>
+                    <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/QLySV.php#">Quản lý sinh viên</a>
+                </li>
+               
+            </ul>
+        </nav>
+
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>                   
+                    </button>
+                    
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" >
+                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 30px"></i>
+                    <span>Tên người dùng</span> 
+                <span class="caret" style="padding-left: 30px"></span></button>
+                    <ul class="dropdown-menu" style="padding-left: 20px">
+                      <li><a href="#">Thông tin tài khoản</a></li>
+                      <li><a href="#">Đổi mật khẩu</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Thoát</a></li>
+                    </ul>
+              </div>
+                    
+                </div>
+            </nav>
+            <div class="container">
+
+                <div class="card">
+                    <h5 class="card-header">TRÍ TUỆ NHÂN TẠO</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">BT1:Tìm kiếm theo chiều rộng</h5>
+                        <p class="card-text">
+                            <b>Opened :</b> Thursday, 23 September 2021 </br>
+                            <b>Due :</b> Sunday, 26 September 2021 
+                        </p>            
+                    </div>
+                </div>
+                    <br/>
+                <div class="card">
+                    <h5 class="card-header">TRÍ TUỆ NHÂN TẠO</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">BT2:Tìm kiếm theo chiều sâu</h5>
+                        <p class="card-text">
+                            <b>Opened :</b> Thursday, 23 September 2021 </br>
+                            <b>Due :</b> Sunday, 26 September 2021 
+                        </p>            
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+       </div>
 </body>
 </html>
+            
