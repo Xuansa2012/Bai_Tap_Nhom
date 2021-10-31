@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Trang chủ | Bài Tập Lớn</title>
+    <title>Trang chủ | Education</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -37,14 +37,15 @@
         <!-- Sidebar  -->
         <div class="header">
             <nav id="sidebar">
-                <div class="sidebar-header" style="color: white;">
-                <img src="cnweb.png" height="70px" width="150px">
-                <p style="color: white;">Công nghệ web</p>
-            </div>
-
+                <div class="sidebar-header">
+                    <img src="images/logo-small.png" height="50px" width="70px">
+                     <p style="color: white;">Công nghệ web</p>
+                </div>
 
                 <ul class="list-unstyled components">
-                    
+                    <li>
+                        <a href="QLySV.php">Quản Lý Sinh Viên</a>
+                    </li>
                     <li>
                         <a href="btvn.php">Bài Tập</a>
                     </li>
@@ -55,12 +56,12 @@
                                 <a href="BTL.php">Bài tập lớn</a>
                             </li>
                             <li>
-                                <a href="#">Đăng ký BTL</a>
+                                <a href="yeucau.php">Yêu cầu chung</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="diemBT.php">Điểm</a>
+                        <a href="diemGV.php">Điểm</a>
                     </li>
                 </ul>
             </nav>
@@ -78,6 +79,7 @@
 
                 <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" >
+                    <i class="fa fa-bell" aria-hidden="true" style="font-size: 20px"></i>
                     <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 25px"></i>
                     <span>Tên người dùng</span> 
                 <span class="caret" style="padding-left: 30px"></span></button>
@@ -92,39 +94,50 @@
               </div>
             </nav>
 
-            <div class="container mt-4">
-      <h2 style="font-size: 20px">BÀI TẬP LỚN</h2>
-      <br/>
+          <br/>
+            <div class="container mt-4" >
+      <h2 style="font-size: 25px"> ĐỀ TÀI BÀI TẬP LỚN</h2>
+     
       <br/>
       <table class="table">
+
       <thead>
         <tr>
           <th scope="col">STT</th>
           <th scope="col">Nhóm</th>
-          <th scope="col">Thành viên</th>
           <th scope="col">Đề tài</th>
         </tr>
       </thead>
+
       <tbody>
-        <tr>
-  
+        <tr>  
           <td>1</td>
+          <td>1</td>
+          <td>Xây dựng website cá nhân cho giáo viên</td>
+        </tr>
+
+        <tr>        
+          <td>2</td>
+          <td>2</td>
+          <td>Xây dựng website cựu sinh viên Viện CNTT-TT</td>
+        </tr>
+
+        <tr>         
+          <td>3</td>
+          <td>3</td>
+          <td>Xây dựng website giới thiệu và đặt sách trực tuyến</td>
+        </tr>
+
+        <tr>       
           <td>4</td>
-          <td>Lèng Xuân Sa<br/> Nguyễn Thị Yến <br/> Vũ Thị Thủy
-          </td>
+          <td>4</td>
           <td>Xây dựng website hỗ trợ quản lý học tập</td>
         </tr>
-        
+
       </tbody>
     </table>
-    <br/>
-      <form action="upload.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="fileToUpload" id="fileToUpload">
-        </form>
-    <br/>
-    <button type="button" class="btn btn-outline-secondary">Nộp</button>
-    </div>
 
+    </div>
     
         </div>   
     </div>

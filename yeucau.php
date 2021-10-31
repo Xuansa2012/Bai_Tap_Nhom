@@ -25,82 +25,62 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-    <style>
-      p {
-  color: black;
-  margin-top: 10px;
-  margin-left: 100px;
-} 
-font {
-  margin-left: 70px;
-  margin-bottom:50px;
-  font-size: 20px;
-  
-}
-  </style>
+    
+    <style type="text/css">
+        .tm:hover{box-shadow: 5px 5px 5px 5px #AAA;}
+    </style>
 </head>
 
 <body>
 
     <div class="wrapper">
         <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <img src="images/logo-small.png" height="70px" width="100px">
-                <p style="color: white;">Trí tuệ nhân tạo</p>
-            </div>
+        <div class="header">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <img src="images/logo-small.png" height="50px" width="70px">
+                     <p style="color: white;">Công nghệ web</p>
+                </div>
 
-            <ul class="list-unstyled components">
-                
-                <li>
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Điểm </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/diemBTL.php">Điểm BTL</a>
-                        </li>
-                        <li>
-                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/diemBTVN.php">Điểm BTVN</a>
-                        </li>
-                    </ul>
-                </li>
-        
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bài tập lớn </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/DSachBTL.php"">Danh sách BTL</a>
-                        </li>
-                        <li>
-                            <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/yeucau.php">Yêu câu chung</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="btvn.php">Bài Tập Về Nhà</a>
-                </li>
-                <li>
-                    <a href="http://localhost:88/BAI_TAP_NHOM-MAIN/guess/QLySV.php#">Quản lý sinh viên</a>
-                </li>
-               
-            </ul>
-        </nav>
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="QLySV.php">Quản Lý Sinh Viên</a>
+                    </li>
+                    <li>
+                        <a href="btvn.php">Bài Tập</a>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bài tập lớn </a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="BTL.php">Bài tập lớn</a>
+                            </li>
+                            <li>
+                                <a href="yeucau.php">Yêu cầu chung</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="diemGV.php">Điểm</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
+            <nav class="navbar navbar-light bg-light" style="margin-top: -50px">
+              <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>                   
-                    </button>
-                    
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>                   
+                </button>
 
                 <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" >
-                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 30px"></i>
+                    <i class="fa fa-bell" aria-hidden="true" style="font-size: 20px"></i>
+                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 25px"></i>
                     <span>Tên người dùng</span> 
                 <span class="caret" style="padding-left: 30px"></span></button>
                     <ul class="dropdown-menu" style="padding-left: 20px">
@@ -110,17 +90,40 @@ font {
                       <li><a href="#">Thoát</a></li>
                     </ul>
               </div>
-                    
-                </div>
+
+              </div>
             </nav>
-            <font color="blue">YÊU CẦU CHUNG:</font>
+
+           
+            <h2 color="black" style="font-size: 25px; margin-top: 80px">YÊU CẦU CHUNG:</h2>
+              <div class="text" style="margin-top: 30px">
               <p>-Yêu cầu SV làm đầy đủ btvn cũng như btl của mình.</p>
               <p>-Không có nhóm nào trùng đề tài.</p>
-              <p>-Khuyến nghị các nhóm thiết kế và xây dựng website theo mô hình MVC hoặc sửdụng một framework
+              <p>-Khuyến nghịcác nhóm thiết kế và xây dựng website theo mô hình MVC hoặc sửdụng một framework
           có sẵn của PHP.</p>
               <p>-Yêu cầu các nhóm đảm bảo các vấn đề security được học trên lớp trong sản phẩm của nhóm.</p>
-              <p>-Các mô tả về các đề tài sau đây chỉ là gợi ý ở mức cơ bản, sinh viên có thể trao đổi thêm với giáo viên
-          về việc phát triển thêm cho hoàn thiện hệ thống</p>
-              <p>-Có thể đề xuất thêm/sửa các chức năng cho phù hợp với website.</p>
+              <p>-Các mô tả về các đề tài sau đây chỉ là gợi ý ởmức cơ bản, sinh viên có thể trao đổi thêm với giáo viên
+          về việc phát triển thêm cho hoàn thiện hệ thống, có thể đề xuất thêm/sửa các chức năng cho phù
+          hợp với website.
+          </p>
+          </div>
+    
+        </div>   
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
 </body>
+
 </html>
