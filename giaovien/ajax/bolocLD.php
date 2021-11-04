@@ -1,13 +1,13 @@
 <?php 
 require_once('../../data_sv.php');
 require_once('../../khungtrang/sesion.php');
-$gv=$_GET['gv'];
+$ld=$_GET['ld'];
 $sql="";
-if($gv==1){
-	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld";
+if($ld==1){
+	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld and email='".$email."'";
 }
 else{
-	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld and nguoidung.ma_nd='".$gv."'";
+	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld and loai_de.ma_ld='".$ld."' and email='".$email."'";
 }
 ?>
 <table class="table table-hover" id="table">
@@ -16,7 +16,7 @@ else{
 					        <th style="max-width: 40px;">Số TT</th>
 					        <th>Tên Bài</th>
 					        <th>Môn học</th>
-					        <th>Giảng viên</th>
+					        <th>số hs nộp bài</th>
 					        <th>Loại đề</th>
 					        <th>Thời Gian Kết Thúc</th>
 					        <th></th>
@@ -55,7 +55,12 @@ else{
 						        <td><?php echo $stt++?></td>
 						        <td><?php echo $monhoc['ten_bt']?></td>
 						        <td><?php echo $monhoc['ten_mon_hoc']?></td>
-						        <td><?php echo $monhoc['ho_ten']?></td>
+						        <td><?php $sql="select count(stt) as tong from luutru,btvn,monhoc where btvn.ma_bt=luutru.ma_bt and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and monhoc.ma_mon_hoc='".$monhoc['ma_mon_hoc']."'";
+						        	$data = laydata($sql);
+						        	if($data!=null && count($data)>0){
+						        		$tong=$data[0]['tong'];
+						        	}else{ $tong=0;}
+						        	echo $tong?></td>
 						        <td><?php echo $monhoc['ten_ld']?></td>
 						        <td><?php echo $ht?></td>
 						        <td><i class="fas fa-eye" style="color: grey;"></i></td>

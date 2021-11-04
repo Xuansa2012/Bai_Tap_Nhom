@@ -1,13 +1,12 @@
 <?php 
 require_once('../../data_sv.php');
-require_once('../../khungtrang/sesion.php');
-$gv=$_GET['gv'];
+$ld=$_GET['ld'];
 $sql="";
-if($gv==1){
+if($ld==1){
 	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld";
 }
 else{
-	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld and nguoidung.ma_nd='".$gv."'";
+	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld and loai_de.ma_ld='".$ld."'";
 }
 ?>
 <table class="table table-hover" id="table">

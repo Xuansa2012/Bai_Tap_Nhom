@@ -1,5 +1,6 @@
 <?php
 	require_once('../data_sv.php');
+	require_once('../khungtrang/sesion.php');
 	$err_hoTen=$err_ngaySinh=$gioiTinh=$err_diaChi=$err_email=$err_soDT="";
 	function rand_string( $length ) {
 		$chars = "0123456789";
@@ -14,7 +15,7 @@
 	if(isset($_POST['hoTen'])){
 		$hoTen=$_POST['hoTen'];
 		if($hoTen==""){
-			$err_hoTen="bạn phải nhập tên sinh viên";
+			$err_hoTen="bạn phải nhập tên giáo viên";
 		}
 		else{
 			$err_hoTen="";
@@ -35,7 +36,7 @@
 	if(isset($_POST['diaChi'])){
 		$diaChi=$_POST['diaChi'];
 		if($diaChi==""){
-			$err_diaChi="bạn phải nhập địa chỉ sinh viên";
+			$err_diaChi="bạn phải nhập địa chỉ";
 		}
 		else{
 			$err_diaChi="";
@@ -44,7 +45,7 @@
 	if(isset($_POST['email'])){
 		$email=$_POST['email'];
 		if($email==""){
-			$err_email="bạn phải nhập email sinh viên";
+			$err_email="bạn phải nhập email giáo viên";
 		}else{
 			$sql= "select * from nguoidung where email='".$email."'";
 			$data=laydata($sql);
@@ -58,17 +59,18 @@
 	if(isset($_POST['soDT'])){
 		$soDT=$_POST['soDT'];
 		if($soDT==""){
-			$err_soDT="bạn phải nhập sdt sinh viên";
+			$err_soDT="bạn phải nhập sdt";
 		}else{
 			$sql= "select * from nguoidung where sdt='".$soDT."'";
 			$data=laydata($sql);
 			if($data!=null && count($data)>0){
-				$err_soDT="sdt đã tồn tại";
+				$err_soDT="số điện thoại đã tồn tại đã tồn tại";
 			}else{
 				$err_soDT="";
 			}
 		}
 	}
+	$err_img="";
 	$target_dir = "images/";
 	if(isset($_FILES["uploadImage"]["name"])){
 		$target_file = $target_dir . basename($_FILES["uploadImage"]["name"]);
@@ -84,29 +86,15 @@
 		}
 	}
 	if($hoTen!="" && $ngaySinh!=="" && $diaChi!="" && $email!="" && $soDT!=""){
-		$check=true;
-		while($check){
-			$radom=rand_string(7);
-			$ma_sv='gv-'.$radom;
-			$sql="select * from nguoidung where ma_nd='".$ma_sv."'";
-			$data=laydata($sql);
-			if($data!=null && count($data)>0){
-				$check=true;
-			}
-			else{
-				$check=false;
-			}
-		}
+		$radom=rand_string(7);
+		$ma_sv='gv-'.$radom;
 		$img="";
 		$mang = explode(".", $target_file);
 		if(count($mang)<=1){
 			$img="";
 		}
 		else{
-			if(($mang[1]=='png') || ($mang[1]=='jpg')){
-				$img=$target_file;
-			}
-			
+			$img=$target_file;
 		}
 		$sql="insert into nguoidung values('".$ma_sv."','".$img."','','','".$hoTen."','".$ngaySinh."','".$gioiTinh."','".$diaChi."','".$email."','".$soDT."','gv')";
 		xuly($sql);
@@ -118,7 +106,7 @@
 <html>
 <head>
 	<title>admin</title>
-	<?php require_once('khungtrang/link.php')?>;
+	<?php require_once('../khungtrang/link.php')?>;
 <style type="text/css">
 		.kc-form-input{
 			margin-top: 10px;
@@ -129,19 +117,22 @@
 		img{
 			height: 100px;
 		}
-		.than{width: 100%;height: auto; margin-top: 40px;background-color: #FFFAF0;padding-left: 70px;}
+		.than{width: 100%;height: auto; margin-top: 40px;}
 	</style>
 	<script type="text/javascript">
  		$(document).ready(function () {
  			$("#uploadImage").change(function(e) {
  				e.preventDefault();
  				var img=$('#uploadImage').val();
- 				var img=img.slice(12);
+ 				var img=img.slice(11);
  				$.ajax({  
 					url:"xulyanh.php?img="+img,  
+					type: "POST",
+					/*data:  new FormData(this),
+					contentType: false,
+					cache: false,*/
 	                success: function(a){ 
                     	$('#upload-done').html(a);
-                    	//alert(a)
                   	}
               });
  			})
@@ -150,12 +141,12 @@
 </head>
 <body>
 	<div class="wrapper" style="position: absolute;position: absolute;top :0">
-		<?php require_once('khungtrang/sidebar.php')?>
+		<?php require_once('../khungtrang/sidebar.php')?>
 		<div id="content" style="width: 85%;">
 			<nav class="navbar navbar-expand-lg " style="background-color: #7386D5;width: 100%;height: 50px;position: absolute;top:0;left:0">
 				<div class="container-fluid">
 					<div class="navbar-header" style="position: absolute;:left: 0;">
-						<a class="navbar-brand" href="test1.php"><i class="fas fa-home"></i> Trang chủ / Thêm Giáo Viên</a>
+						<a class="navbar-brand" href="#"><i class="fas fa-home"></i> Trang chủ / Thêm Giáo Viên</a>
 					</div>    
 					<div class="navbar-header" style="position: absolute;right: 0;">
 						<a class="navbar-brand" href="#"><i class="fas fa-user-tie"></i> admin</a>
@@ -166,7 +157,7 @@
 				<form action="" id="form" method="post" enctype="multipart/form-data">	
 					<div class="row">
 						<div class="col-sm-3">
-							<label for="hoTen" class="kc-form-input">Họ Tên Giáo viên(*) :</label>
+							<label for="hoTen" class="kc-form-input">Họ Tên Sinh Viên (*) :</label>
 						</div>
 						<div class="col-sm-4">
 							<input type="text" class="form-control" id="hoTen" placeholder="Họ Tên Giáo Viên" name="hoTen" value="<?php echo $hoTen?>">

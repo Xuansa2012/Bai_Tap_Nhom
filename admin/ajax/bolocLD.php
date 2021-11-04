@@ -1,5 +1,6 @@
 <?php 
 require_once('../../data_sv.php');
+require_once('../../khungtrang/sesion.php');
 $ld=$_GET['ld'];
 $sql="";
 if($ld==1){
@@ -44,8 +45,9 @@ else{
 									}
 									else if($minutes>0){
 										$ht="còn ".$minutes. " phút";
-									}else{
-										$ht="hết giờ";
+									}
+									else if($seconds>0){
+										$ht="còn ".$seconds. " giây";
 									}
 						    ?>
 					    <tbody>

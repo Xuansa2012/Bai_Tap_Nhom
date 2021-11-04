@@ -1,5 +1,6 @@
 <?php require_once('../data_sv.php');
-	$err_tenMon=$err_ngaySinh=$gioiTinh=$err_trongSo=$err_moTa=$err_soDT=$err_KT="";
+require_once('../khungtrang/sesion.php');
+	$err_tenMon=$err_ngaySinh=$gioiTinh=$err_trongSo =$err_moTa=$err_soDT=$err_KT="";
 	function rand_string( $length ) {
 		$chars = "0123456789";
 		$size = strlen( $chars );
@@ -109,7 +110,7 @@
 <html>
 <head>
 	<title>admin</title>
-	<?php require_once('khungtrang/link.php')?>;
+	<?php require_once('../khungtrang/link.php')?>;
 	<style type="text/css">
 		<style type="text/css">
 		.kc-form-input{
@@ -121,7 +122,7 @@
 		img{
 			height: 100px;
 		}
-		.than{width: 100%;height: auto; margin-top: 40px;background-color: #FFFAF0;padding-left: 70px;}
+		.than{width: 100%;height: auto; margin-top: 40px;}
 		.khunganhMT{
 			width: 100px;
 			height: 110px;
@@ -172,7 +173,7 @@
 </head>
 <body>
 	<div class="wrapper" style="position: absolute;position: absolute;top :0">
-		<?php require_once('khungtrang/sidebar.php')?>
+		<?php require_once('../khungtrang/sidebar.php')?>
 		<div id="content" style="width: 85%;">
 			<nav class="navbar navbar-expand-lg " style="background-color: #7386D5;width: 100%;height: 50px;position: absolute;top:0;left:0">
 				<div class="container-fluid">

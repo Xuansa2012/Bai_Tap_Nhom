@@ -1,6 +1,4 @@
 <?php 
-require_once('../../data_sv.php');
-require_once('../../khungtrang/sesion.php');
 $img=$_GET['img'];
 $mangIMG="";
 if(isset($_COOKIE['mangIMG'])){

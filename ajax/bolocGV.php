@@ -1,6 +1,5 @@
 <?php 
-require_once('../../data_sv.php');
-require_once('../../khungtrang/sesion.php');
+require_once('../data_sv.php');
 $gv=$_GET['gv'];
 $sql="";
 if($gv==1){

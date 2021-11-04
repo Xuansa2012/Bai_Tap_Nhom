@@ -1,5 +1,6 @@
 <?php 
 require_once('../../data_sv.php');
+require_once('../../khungtrang/sesion.php');
 $ld=$_GET['bolocLD'];
 $gv=$_GET['giaovien'];
 $mon=$_GET['monhoc'];
