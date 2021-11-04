@@ -2,15 +2,6 @@
 	require_once('../data_sv.php');
 	require_once('../khungtrang/sesion.php');
 	$err_hoTen=$err_ngaySinh=$gioiTinh=$err_diaChi=$err_email=$err_soDT="";
-	function rand_string( $length ) {
-		$chars = "0123456789";
-		$size = strlen( $chars );
-		$str ="";
-		for( $i = 0; $i < $length; $i++ ) {
-			$str .= $chars[ rand( 0, $size - 1 ) ];
-		}
-		return $str;
-	}
 	$hoTen=$ngaySinh=$gioiTinh=$diaChi=$soDT=$email="";
 	if(isset($_POST['hoTen'])){
 		$hoTen=$_POST['hoTen'];
@@ -96,7 +87,7 @@
 		else{
 			$img=$target_file;
 		}
-		$sql="insert into nguoidung values('".$ma_sv."','".$img."','','','".$hoTen."','".$ngaySinh."','".$gioiTinh."','".$diaChi."','".$email."','".$soDT."','sv')";
+		$sql="insert into nguoidung values('".$ma_sv."','".$img."','12345678','','".$hoTen."','".$ngaySinh."','".$gioiTinh."','".$diaChi."','".$email."','".$soDT."','sv')";
 		xuly($sql);
 		header("location:hello.php");
 	}

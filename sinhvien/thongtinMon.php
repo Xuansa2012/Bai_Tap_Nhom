@@ -3,8 +3,8 @@ require_once ('../data_sv.php');
 require_once('../khungtrang/sesion.php');
 $check=false;
 $ma_nd_sv="";
-if(isset($_GET['ma_nd'])){
-	$ma_nd=$_GET['ma_nd'];
+if(isset($_GET['ma_mon'])){
+	$ma_nd=$_GET['ma_mon'];
 	$sql="select * from nguoidung,phanloai where nguoidung.ma_pl=phanloai.ma_pl and ma_nd='".$ma_nd."'";
 	$data=laydata($sql);
 	if($data!=null && count($data)>0){
@@ -26,23 +26,7 @@ if(isset($_GET['ma_nd'])){
 <html>
 <head>
 	<title>admin</title>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style2.css">
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-
-
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<?php require_once('../khungtrang/link.php')?>;
     <style type="text/css">
 		.than{width: 100%;height: auto; margin-top: 40px;}
 		.dt1{width: 100%;height:250px;}
@@ -62,7 +46,8 @@ if(isset($_GET['ma_nd'])){
 </head>
 <body>
 <div class="wrapper" style="position: absolute;position: absolute;top :0">
-	<?php require_once('../khungtrang/sidebar.php')?>
+	<?php require_once('../khungtrang/sidebarSV.php')?>
+
 	<div id="content" style="width: 85%;">
 		<nav class="navbar navbar-expand-lg " style="background-color: #7386D5;width: 100%;height: 50px;position: absolute;top:0;left:0">
 			<div class="container-fluid">
@@ -78,9 +63,9 @@ if(isset($_GET['ma_nd'])){
 			<div class="row">
 				<div class="col-sm-3">
 					<?php if($img==""|| $img==null){?>
-                    	<img src="../images/img-01.png" height="250px">
+                    	<img src="images/img-01.png" height="250px">
                 	<?php }else{?>
-                    	<img src="../<?php echo $img?>" height="250px">
+                    	<img src="<?php echo $img?>" height="250px">
                 	<?php }?>
 				</div>
 				<div class="col-sm-7 khung" >
@@ -112,7 +97,7 @@ if(isset($_GET['ma_nd'])){
 						?>
 				</div>
 				<div class="col-sm-4">
-					<a href="qlNguoidung.php"><button class="btn btn-success">Trở về</button></a>
+					<a href="sqlNguoidung.php"><button class="btn btn-success">Trở về</button></a>
 				</div>
 			</div>
 			<div class="clear"></div>

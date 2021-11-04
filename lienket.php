@@ -13,7 +13,7 @@ if(isset($_SESSION['email'])){
 		}else if($pl=='gv'){
 			header('location:giaovien/giaovien.php');
 		}else{
-			header('location:sinhvien.php');
+			header('location:sinhvien/sinhvien.php');
 		}
 	}
 }

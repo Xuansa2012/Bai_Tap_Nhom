@@ -26,6 +26,9 @@ require_once('../khungtrang/sesion.php');
 		width: 100%;
 		height: 10px;
 	}
+	body{
+		font-size:20px;
+	}
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){  
@@ -54,18 +57,18 @@ require_once('../khungtrang/sesion.php');
 		<nav class="navbar navbar-expand-lg " style="background-color: #7386D5;width: 100%;height: 50px;position: absolute;top:0;left:0">
 			<div class="container-fluid">
 				<div class="navbar-header" style="position: absolute;:left: 0;">
-					<a class="navbar-brand" href="#"><i class="fas fa-home"></i> Trang chủ/ nhập file người dùng</a>
+					<a class="navbar-brand" href="giaovien.php" style="font-size: 20px;"><i class="fas fa-home"></i>  Trang chủ/ Thêm môn</a>
 				</div>    
 				<div class="navbar-header" style="position: absolute;right: 0;">
-					<a class="navbar-brand" href="#"><i class="fas fa-user-tie"></i> admin</a>
+					<a class="navbar-brand" href="#"  style="font-size: 20px;"><i class="fas fa-user-tie"></i> <?php echo $ho_ten?></a>
 				</div>    
 			</div>
 		</nav>
-		<div class="than" style="width: 100%;height: auto; margin-top: 40px;">
+		<div class="than" style="width: 100%;height: auto; margin-top: 40px; background-color: #FAF0E6;">
 			<form id="upload_csv" method="post" enctype="multipart/form-data" style="text-align: center;">  
 				<div class="col-sm-6">
 					<div class="row">
-						<div class="col-sm-5" style="margin-top: 10px;text-align: right;">Người dùng</div>
+						<div class="col-sm-5" style="margin-top: 10px;text-align: right;"></div>
 						<div class="col-sm-7">
 							
 						</div>

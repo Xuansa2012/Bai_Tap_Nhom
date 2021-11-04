@@ -38,7 +38,7 @@ if(isset($_GET['ma_btvn'])){
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <style type="text/css">
-		.than{width: 100%;height: auto; margin-top: 40px;}
+		.than{width: 100%;height: auto; margin-top: 40px;background-color:#FAF0E6 ;}
 		.dt1{width: 100%;height:250px;}
 		.container{width: 100%;height: 200px;background-color: #FAF0E6;float: left}
 		.thanh{width: 100%;height: 40px;background-color: #6A5ACD;padding-top: 8px;padding-left: 10px;color: white;}
@@ -52,6 +52,9 @@ if(isset($_GET['ma_btvn'])){
 			width: 100%;
 			height: 10px;
 		}
+		body{
+			font-size: 20px;
+		}
 	</style>
 </head>
 <body>
@@ -61,10 +64,10 @@ if(isset($_GET['ma_btvn'])){
 		<nav class="navbar navbar-expand-lg " style="background-color: #7386D5;width: 100%;height: 50px;position: absolute;top:0;left:0">
 			<div class="container-fluid">
 				<div class="navbar-header" style="position: absolute;:left: 0;">
-					<a class="navbar-brand" href="#"><i class="fas fa-home"></i> Trang chủ <?php if($check==false){echo '-> Trang cá nhân';}?></a>
+					<a class="navbar-brand" href="#" style="color:black"><i class="fas fa-home"></i> Trang chủ <?php if($check==false){echo '-> Trang cá nhân';}?></a>
 				</div>    
 				<div class="navbar-header" style="position: absolute;right: 0;">
-					<a class="navbar-brand" href="#"><i class="fas fa-user-tie"></i> <?php echo $ho_ten?></a>
+					<a class="navbar-brand" href="#"style="color: black;"><i class="fas fa-user-tie"></i> <?php echo $ho_ten?></a>
 				</div>    
 			</div>
 		</nav>
@@ -77,7 +80,7 @@ if(isset($_GET['ma_btvn'])){
 				<?php echo '<div><a href="taitailieu.php?maTL='.$debai.'">xem đề bài tại đây</a></div>'?>
 				<div>Lưu ý (*): nộp chậm 1 ngày trừ 1 điểm / tổng điểm</div>
 			</div>
-			<div class="thanh">Danh sách học sinh</div>
+			<div class="thanh" style="margin-top:40px">Danh sách học sinh</div>
 				<table class="table table-hover" id="table">
 				    <thead>
 				      <tr>

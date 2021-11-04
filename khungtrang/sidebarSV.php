@@ -21,14 +21,11 @@
         </div>
         
     <ul class="list-unstyled components">
-        <li><a href="../giaovien/themmon.php">Thêm môn học</a></li>
-        <li><a href="../giaovien/thembaitap.php">Thêm Bài Tập</a></li>
-
         <li class="active">
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-plus-square"></i>Quản lý môn </a>
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-plus-square"></i>Môn học</a>
             <ul class="collapse list-unstyled" id="homeSubmenu">
                 <?php 
-                    $sql="select * from monhoc where ma_nd='".$ma_nd."'";
+                    $sql="select * from monhoc";
                     $data=laydata($sql);
                     foreach($data as $monhoc){
                 ?>
@@ -41,8 +38,5 @@
         
           
         <li><a href="../dangxuat.php">Đăng xuất</a></li>
-       <!--  <li>
-            <a href="#"><?php echo $_SESSION['taikhoan']?></a>
-        </li> -->
     </ul>
 </nav>

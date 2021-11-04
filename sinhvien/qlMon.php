@@ -43,7 +43,8 @@ require_once('../khungtrang/sesion.php');?>
 </head>
 <body>
 <div class="wrapper" style="position: absolute;position: absolute;top :0">
-	<?php require_once('../khungtrang/sidebar.php')?>
+	<?php require_once('../khungtrang/sidebarSV.php')?>
+
 	<div id="content" style="width: 85%;">
 		<nav class="navbar navbar-expand-lg " style="background-color: #7386D5;width: 100%;height: 50px;position: absolute;top:0;left:0">
 			<div class="container-fluid">
@@ -108,7 +109,7 @@ require_once('../khungtrang/sesion.php');?>
 						<td><?php echo $mon['ten_mon_hoc']?></td>
 						<td><?php echo $mon['ho_ten']?></td>
 						<td><?php echo$mon['siso']?></td>
-						<td><a href="thongtinMon.php?ma_mon=<?php echo $mon['ma_mon_hoc']?>"><i class="fas fa-eye"></i></a></td>
+						<td><a href="ctmon.php?ma_mon=<?php echo $mon['ma_mon_hoc']?>"><i class="fas fa-eye"></i></a></td>
 					</tbody>
 					<?php }?>
 				</table>

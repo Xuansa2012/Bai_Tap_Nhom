@@ -1,7 +1,17 @@
+<style type="text/css">
+    ul li a{
+        text-decoration: none;
+        color: white;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+</style>
+
 <nav id="sidebar" style="width: 15%;">
             <div class="sidebar-header" style="color: white;">
                 <?php if($img==""|| $img==null){?>
-                    <img src="../images/img-01.png" height="150px" width="150px">
+                    <img src="../images/macdinh.png" height="150px" width="150px">
                 <?php }else{?>
                     <img src="../<?php echo $img?>" height="150px" width="150px">
                 <?php }?>
@@ -36,10 +46,6 @@
                         </li> -->
                     </ul>
                 </li>
-                <li><a href="thongtinNguoidung.php">Thông Tin cá nhân</a></li>
-                <li><a href="">Thêm Môn học</a></li>
-                <li><a href="">Danh Sách học Sinh</a></li>
-                <li><a href="">Danh Sách Môn Học</a></li>
                  <li><a href="../dangxuat.php">Đăng xuất</a></li>
                <!--  <li>
                     <a href="#"><?php echo $_SESSION['taikhoan']?></a>

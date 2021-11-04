@@ -83,10 +83,10 @@ require_once('../khungtrang/sesion.php');
 			<nav class="navbar navbar-expand-lg " style="background-color: #7386D5;width: 100%;height: 50px;position: absolute;top:0;left:0">
 				<div class="container-fluid">
 					<div class="navbar-header" style="position: absolute;:left: 0;">
-						<a class="navbar-brand" href="test1.php" style="font-size:20px;"><i class="fas fa-home"></i> Trang chủ</a>
+						<a class="navbar-brand" href="test1.php"><i class="fas fa-home"></i> Trang chủ</a>
 					</div>    
 					<div class="navbar-header" style="position: absolute;right: 0;">
-						<a class="navbar-brand" href="#"><i class="fas fa-user-tie" style="font-size:20px;"></i><?php echo $ho_ten?></a>
+						<a class="navbar-brand" href="#"><i class="fas fa-user-tie"></i> admin</a>
 					</div>    
 				</div>
 			</nav>
@@ -111,32 +111,18 @@ require_once('../khungtrang/sesion.php');
 							</div>
 						</div>
 						<div class="col-sm-3">
+							<button type="submit" class="btn btn-info">
+								<div class="row">
+									<div class="col-sm-3"></div>
+									<div class="col-sm-9" style="margin-left:-30px ;">Thêm Bài Tập</div>
+								</div>
+							</button>
+						</div>
+						<div class="col-sm-3">
 							
 						</div>
 						<div class="col-sm-3">
-							<div class="row">
-								<div class="col-sm-5" style="margin-top: 10px;text-align: right;">Loại đề</div>
-								<div class="col-sm-7">
-									<select class="form-control" aria-label="Default select example" id="bolocLD" name="bolocLD">
-										<option value="1">tất cả</option>
-										<?php 
-										$sql="select * from loai_de";
-										$result=laydata($sql);
-										foreach($result as $row) {
-										?>
-										<option value="<?php echo $row['ma_ld']?>"><?php echo $row['ten_ld']?></option>
-										<?php }?>
-									</select>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<button type="submit" class="btn btn-info">
-								<div class="row">
-									<div class="col-sm-5"><i class="fas fa-search"></i></div>
-									<div class="col-sm-7" style="margin-left:-30px ;">Tìm Kiếm</div>
-								</div>
-							</button>
+							
 						</div>
 					</div>
 				</form>
@@ -146,56 +132,24 @@ require_once('../khungtrang/sesion.php');
 					    <thead>
 					      <tr>
 					        <th style="max-width: 40px;">Số TT</th>
-					        <th>Tên Bài</th>
+					        <th>Tên Chủ Đề</th>
 					        <th>Môn học</th>
-					        <th>số hs nộp bài</th>
-					        <th>Loại đề</th>
 					        <th>Thời Gian Kết Thúc</th>
 					        <th></th>
 					      </tr>
 					    </thead>
 					    <?php 
 					    	$stt=1;
-					    	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld and nguoidung.ma_pl='".$ma_pl."'and email='".$email."'";
-					    	date_default_timezone_set("Asia/Ho_Chi_Minh");
-					    	$dateNow=date("Y-m-d H:i:s");
+					    	$sql="select * from monhoc,btl where monhoc.ma_mon_hoc=btl.ma_mon_hoc and ma_nd='".$ma_nd."'";
 					    	$data=laydata($sql);
-					    	foreach($data as $monhoc){
-								$diff = abs(strtotime($monhoc['thoigian_kt'])-strtotime($dateNow));
-								$years = floor($diff / (365*60*60*24));
-								$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-								$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24) / (60*60*24));
-								$hours = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24) / (60*60));
-								$minutes = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24 - $hours*60*60) / 60);
-								$seconds = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24 - $hours*60*60 - $minutes*60));
-								$ht=0;
-								if($days>0){
-									$ht="còn ".$days. " ngày";
-								}
-								else if($hours>0){
-									$ht="còn ".$hours. " giờ";
-								}
-								else if($minutes>0){
-									$ht="còn ".$minutes. " phút";
-								}
-								else if($seconds>0){
-									$ht="còn ".$seconds. " giây";
-								}
+					    	foreach($data as $ds){
+								$ht=thoigian($ds['thoi_gian']);
 					    ?>
 					    <tbody>
 						    <tr>
 						        <td><?php echo $stt++?></td>
-						        <td><?php echo $monhoc['ten_bt']?></td>
-						        <td><?php echo $monhoc['ten_mon_hoc']?></td>
-						        <td>
-						        	<?php $sql="select count(stt) as tong from luutru,btvn,monhoc where btvn.ma_bt=luutru.ma_bt and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and monhoc.ma_mon_hoc='".$monhoc['ma_mon_hoc']."'";
-						        	$data = laydata($sql);
-						        	if($data!=null && count($data)>0){
-						        		$tong=$data[0]['tong'];
-						        	}else{ $tong=0;}
-						        	echo $tong?>
-						        </td>
-						        <td><?php echo $monhoc['ten_ld']?></td>
+						        <td><?php echo $ds['ten_de_tai']?></td>
+						        <td><?php echo $ds['ten_mon_hoc']?></td>
 						        <td><?php echo $ht?></td>
 						        <td><a href="ctbtvn.php?ma_btvn=<?php echo $monhoc['ma_bt']?>"><i class="fas fa-eye" style="color: grey;"></i></a></td>
 						     </tr>

@@ -1,6 +1,6 @@
+
 <?php 
-require_once('../../data_sv.php');
-require_once('../../khungtrang/sesion.php');
+require_once('../data_sv.php');
 function rand_string( $length ) {
 		$chars = "0123456789";
 		$size = strlen( $chars );
@@ -35,7 +35,7 @@ echo '
 	$i=1;
 while($row = fgetcsv($file_data))  
 {  	
-	$mang= mysqli_real_escape_string($connect, $row[1]);
+
 	$hoTen = mysqli_real_escape_string($connect, $row[1]);
 	$gioiTinh = mysqli_real_escape_string($connect, $row[2]);
 	$ngaySinh = mysqli_real_escape_string($connect, $row[3]);
@@ -87,8 +87,8 @@ while($row = fgetcsv($file_data))
 		else{
 			$ma_nd="sv-".$radom;
 		}
-		$sql="insert into nguoidung values('".$ma_nd."','".$img."','12345678',N'".$hoTen."','".$ngaySinh."',N'".$gioiTinh."',N'".$diaChi."','".$email."','".$soDT."','".$ma_pl."')";
-		mysqli_query($connect, $sql);
+		$sql="insert into nguoidung values('".$ma_nd."','".$img."','',N'".$hoTen."','".$ngaySinh."',N'".$gioiTinh."',N'".$diaChi."','".$email."','".$soDT."','".$ma_pl."')";
+		xuly($sql);
 	}
 	else{
 		$trangthai="❌";
@@ -103,4 +103,3 @@ while($row = fgetcsv($file_data))
 	</tbody>';
 }
 echo '</table>';
-?>

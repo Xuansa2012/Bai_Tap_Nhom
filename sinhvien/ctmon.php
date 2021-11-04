@@ -106,7 +106,7 @@
 
 <body>
 <div class="wrapper" style="position: absolute;position: absolute;top :0">
-    <?php require_once('../khungtrang/sidebarGV.php')?>
+    <?php require_once('../khungtrang/sidebarSV.php')?>
         <!-- Sidebar  -->
     <div id="content" style="width:85%;">
 <nav class="navbar navbar-expand-lg " style="background-color: #7386D5;width: 100%;height: 50px;position: absolute;top:0;left:0">
@@ -159,7 +159,7 @@
             }
             ?>
         </div>
-                <div style="margin-top:80px">
+        <div style="margin-top:80px">
             <div class="thanh">Đẩy Tài liệu</div>
             <div style="margin-top: 20px"></div>
             <form id="upload_csv" method="post" enctype="multipart/form-data">  
@@ -175,7 +175,7 @@
                 </div>
             </form>  
         </div>
-
+        
         
 
     
