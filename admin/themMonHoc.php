@@ -93,9 +93,9 @@ require_once('../khungtrang/sesion.php');
 		else{
 			$img=$target_file;
 		}
-		$sql="insert into monhoc values('".$ma_mh."','".$tenMon."','".$ma_nd."','0','".$trong_so."','".$kiem_tra."','".$moTa."','".$img."')";
+		$sql="insert into monhoc values('".$ma_mh."','".$tenMon."','".$ma_nd."','0','".$trong_so."','".$kiem_tra."','".$moTa."','".$img."','')";
 		xuly($sql);
-		//header("location:hello.php");
+		header("location:qlMon.php");
 	}
 ?>
 <!DOCTYPE html>
@@ -136,7 +136,7 @@ require_once('../khungtrang/sesion.php');
  				var img=$('#uploadImage').val();
  				var img=img.slice(11);
  				$.ajax({  
-					url:"xulyanh.php?img="+img,  
+					url:"ajax/xulyanh.php?img="+img,  
 					type: "POST",
 					/*data:  new FormData(this),
 					contentType: false,
@@ -145,24 +145,7 @@ require_once('../khungtrang/sesion.php');
                     	$('#upload-done').html(a);
                   	}
               });
- 			})
- 			$("#imageMT").change(function(e) {
- 				e.preventDefault();
- 				var img=$('#imageMT').val();
- 				var img=img.slice(11);
- 				$.ajax({  
-					url:"ajax/themanhMT.php?img="+img,  
-					type: "POST",
-					/*data:  new FormData(this),
-					contentType: false,
-					cache: false,*/
-	                success: function(a){ 
-                    	$('#pateImg').html(a);
-                    	//alert(a);
-                  	}
-              });
- 			})
- 			
+ 			})	
  		});
 	</script>
 </head>
@@ -254,7 +237,7 @@ require_once('../khungtrang/sesion.php');
 							<?php 
 								$mang = explode(".", $target_file);
 								if(count($mang)>1){
-									echo '<img src="'.$target_file.'">';
+									echo '<img src="../'.$target_file.'">';
 								}
 							?>
 						</div>
@@ -279,6 +262,7 @@ require_once('../khungtrang/sesion.php');
 						<div class="col-sm-5"></div>
 					</div>
 				</form>
+				
 			</div>
 		</div>
 	</div>

@@ -1,8 +1,7 @@
 <?php 
 require_once('../../data_sv.php');
-require_once('../khungtrang/sesion.php');
+require_once('../../khungtrang/sesion.php');
 $ld=$_GET['bolocLD'];
-$gv=$_GET['giaovien'];
 $mon=$_GET['monhoc'];
 $sql="";
 if($ld==1 && $mon==1){
@@ -12,7 +11,10 @@ else if($ld==1){
 	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld and monhoc.ma_mon_hoc='".$mon."' and email='".$email."'";
 }
 else if($mon==1){
-	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld and nguoidung.ma_nd='".$gv."' and email='".$email."'";
+	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld and loai_de.ma_ld='".$ld."' and email='".$email."'";
+}
+else{
+	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld and loai_de.ma_ld='".$ld."' and email='".$email."' and monhoc.ma_mon_hoc='".$mon."'";
 }
 ?>
 <table class="table table-hover" id="table">

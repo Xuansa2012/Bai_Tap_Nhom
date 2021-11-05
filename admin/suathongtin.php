@@ -2,15 +2,7 @@
 	require_once('../data_sv.php');
 	require_once('../khungtrang/sesion.php');
 	$err_hoTen=$err_ngaySinh=$gioiTinh=$err_diaChi=$err_email=$err_soDT="";
-	function rand_string( $length ) {
-		$chars = "0123456789";
-		$size = strlen( $chars );
-		$str ="";
-		for( $i = 0; $i < $length; $i++ ) {
-			$str .= $chars[ rand( 0, $size - 1 ) ];
-		}
-		return $str;
-	}
+	
 	$hoTen=$ngaySinh=$gioiTinh=$diaChi=$soDT=$email=$target_file="";
 	if(isset($_GET['ma_nd'])){
 		$ma_nd=$_GET['ma_nd'];
@@ -138,7 +130,8 @@ if(isset($_POST['hoTen']) && isset($_POST['ngaySinh']) && isset($_POST['diaChi']
 		img{
 			height: 100px;
 		}
-		.than{width: 100%;height: auto; margin-top: 40px;}
+		.than{width: 100%;height: auto; margin-top: 40px;font-size: 20px; background-color: #FFFAF0;padding-left: 150px;}
+		body{font-size: 20px;}
 	</style>
 	<script type="text/javascript">
  		$(document).ready(function () {
@@ -147,7 +140,7 @@ if(isset($_POST['hoTen']) && isset($_POST['ngaySinh']) && isset($_POST['diaChi']
  				var img=$('#uploadImage').val();
  				var img=img.slice(11);
  				$.ajax({  
-					url:"xulyanh.php?img="+img,  
+					url:"ajax/xulyanh.php?img="+img,  
 					type: "POST",
 					/*data:  new FormData(this),
 					contentType: false,
@@ -255,7 +248,7 @@ if(isset($_POST['hoTen']) && isset($_POST['ngaySinh']) && isset($_POST['diaChi']
 							<?php 
 								$mang = explode(".", $target_file);
 								if(count($mang)>1){
-									echo '<img src="'.$target_file.'">';
+									echo '<img src="../'.$target_file.'">';
 								}
 							?>
 						</div>

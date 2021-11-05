@@ -78,7 +78,7 @@ $ma_bt=$_GET['maBT'];
 					<a class="navbar-brand" href="index.php"style="color: black;font-size: 20px;"><i class="fas fa-home"></i> Trang chủ / Bài tập <?php echo $ten_bt?></a>
 				</div>    
 				<div class="navbar-header" style="position: absolute;right: 0;">
-					<a class="navbar-brand" href="#"><i class="fas fa-user-tie"></i> <?php echo $ho_ten?></a>
+					<a class="navbar-brand" href="#"style="color: black;font-size: 20px;"><i class="fas fa-user-tie"></i> <?php echo $ho_ten?></a>
 				</div>    
 			</div>
 		</nav>
@@ -91,6 +91,7 @@ $ma_bt=$_GET['maBT'];
 			<br>
 			<div>Hạn làm bài <?php echo $ht?></div>
 			<?php echo '<div style="margin-left:500px;font-size:25px;"><a href="taitailieu.php?maTL='.$de_bai.'">Đề bài</a></div>';?>
+			<div>Lưu ý sinh viên nộp muộn 1 ngày bị trừ 1 điểm</div>
 			  <div class="thanh" >Nộp bài</div>
 			   <form id="upload_csv" method="post" enctype="multipart/form-data">  
             		<div class="row" style="margin-left: 20px">
@@ -106,12 +107,14 @@ $ma_bt=$_GET['maBT'];
             	</form>
             	 <div class="thanh">Trạng thái </div>
             	 <div id="pate">
-            	 <?php $sql ="select * from luutru,nguoidung where nguoidung.ma_nd=luutru.ma_nd and ma_bt='".$ma_bt."'";
+            	 <?php $sql ="select * from luutru,nguoidung where nguoidung.ma_nd=luutru.ma_nd and ma_bt='".$ma_bt."' and nguoidung.ma_nd='".$ma_nd."'";
             	 	$data=laydata($sql);
             	 	if($data!=null && count($data)>0){
+						 $lan=0;
             	 		echo '<div>Đã nộp</div>';
             	 		foreach($data as $ds){
-            	 			echo '<div><a href="taitailieu.php?maTL=../teacher/'.$ds['bai_lam'].'">bài làm</a></div>';	
+							 $lan++;
+            	 			echo '<div><a href="taitailieu.php?maTL='.$ds['bai_lam'].'">bài làm lần '.$lan.'</a></div>';	
             	 		}
             	 		
             	 	}?>

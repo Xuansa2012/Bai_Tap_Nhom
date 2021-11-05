@@ -10,7 +10,12 @@
 		if($data!=null && count($data)>0){
 			$data_file=$data[0]['tai_lieu'];
 		}
-		$data_file.='*'.$file;
+		if($data_file=="" || $data_file==null){
+			$data_file.=$file;
+		}
+		else{
+			$data_file.='*'.$file;
+		}
 		$sql="update monhoc set tai_lieu='".$data_file."' where ma_mon_hoc='".$ma_mon."'";
 		xuly($sql);
 	}?>

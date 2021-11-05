@@ -7,19 +7,20 @@ use PHPMailer\PHPMailer\Exception;
 require 'sendEmailv1\Exception.php';
 require 'sendEmailv1\PHPMailer.php';
 require 'sendEmailv1\SMTP.php';
-require_once('../../data_sv.php');
+require_once('data_sv.php');
 $maicangui=$_POST['email'];
 $sql="select * from nguoidung where email='".$maicangui."'";
 $data=laydata($sql);
 $check="false";
-if($data!=null && count($data)>0){
-	$mk=$ten="";
-	foreach ($data as $nguoidung) {
-		$mk=$nguoidung['mat_khau'];
-		$ten=$nguoidung['ho_ten'];
-	}
-	$mail = new PHPMailer(true);
+if($data==null && count($data)==0){
+	$check=true;
+	echo $check;
+	die();
+}
+else{
+	$pas=$data[0]['mat_khau'];
 	try {
+		$mail = new PHPMailer(true);
     //Server settings
 	    $mail->SMTPDebug = SMTP::DEBUG_SERVER;// Enable verbose debug output
 	    $mail->isSMTP();// gửi mail SMTP
@@ -47,16 +48,15 @@ if($data!=null && count($data)>0){
 	    $mail->Subject = $tieude;
 	    
 	    // Mail body content 
-	    $bodyContent = '<p>Chào bạn <b>'.$ten.'</b></h1>'; 
+	    $bodyContent = '<p>Chào bạn </p>'; 
 	    $bodyContent .= '<p>Dưới đây là mật khẩu của bạn, hãy nhấn vào link dưới đây để đăng nhập lại </p>'; 
-	    $bodyContent .= '<p>Mật khẩu của bạn là :'.$mk.'</p>'; 
+	    $bodyContent .= '<p>Mật khẩu của bạn là :'.$pas.'</p>'; 
 	    $bodyContent .= '<p><b>Thân mến!</b></p>';
-	    $bodyContent .= '<p><b>http://localhost/bai_tap_nhom22/admin/dn.php</b></p>';
+	    $bodyContent .= '<p><b>http://localhost:8080/bai_tap/dn.php</b></p>';
 	    
 	    $mail->Body = $bodyContent;
 	    $mail->send();
 	    $check="false";
-		echo $check;
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     /*if($mail->send()){
         echo 'Thư đã được gửi đi';
@@ -68,10 +68,7 @@ if($data!=null && count($data)>0){
 	    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 	}
 }
-else{
-	$check="true";
-	echo $check;
-}
+echo $check;
 ?>
 
 

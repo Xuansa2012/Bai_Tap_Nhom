@@ -57,7 +57,7 @@ else{
 						        <td><?php echo $monhoc['ho_ten']?></td>
 						        <td><?php echo $monhoc['ten_ld']?></td>
 						        <td><?php echo $ht?></td>
-						        <td><i class="fas fa-eye" style="color: grey;"></i></td>
+								<td><a href="thongTinBT.php?maBT=<?php echo $monhoc['ma_bt']?>"><i class="fas fa-eye" style="color: grey;"></i></td>
 						     </tr>
 					    </tbody>
 						<?php }}?>

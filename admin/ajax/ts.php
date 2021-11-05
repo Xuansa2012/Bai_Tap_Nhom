@@ -31,6 +31,7 @@ while($row = fgetcsv($file_data))
 	$diaChi= $arr[3];
 	$email = $arr[4];
 	$sdt=$arr[5];
+	$sdt="0".$sdt;
 	$anh = $arr[6];
 	$phanloai=$arr[7];
 	$mang = explode("/", $ngaySinh);
@@ -74,7 +75,7 @@ while($row = fgetcsv($file_data))
 		else{
 			$ma_nd="sv-".$radom;
 		}
-		$sql="insert into nguoidung values('".$ma_nd."','".$anh."','',N'".$hoTen."','".$ngaySinh."',N'".$gioiTinh."',N'".$diaChi."','".$email."','".$sdt."','".$ma_pl."')";
+		$sql="insert into nguoidung values('".$ma_nd."','".$anh."','12345678',N'".$hoTen."','".$ngaySinh."',N'".$gioiTinh."',N'".$diaChi."','".$email."','".$sdt."','".$ma_pl."')";
 		mysqli_query($connect, $sql);
 	}
 	else{

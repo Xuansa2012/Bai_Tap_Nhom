@@ -1,8 +1,7 @@
 <?php
 require_once ('../data_sv.php');
 require_once('../khungtrang/sesion.php');
-$check=false;
-$ma_nd_sv="";
+
 if(isset($_GET['ma_btvn'])){
 	$ma_btvn=$_GET['ma_btvn'];
 	$sql="select * from monhoc,btvn where monhoc.ma_mon_hoc=btvn.ma_mon_hoc and ma_bt='".$ma_btvn."'";
@@ -19,7 +18,7 @@ if(isset($_GET['ma_btvn'])){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>admin</title>
+	<title>Teacher</title>
 	  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style2.css">
@@ -94,7 +93,7 @@ if(isset($_GET['ma_btvn'])){
 				    	<td><?php echo $i++?></td>
 				    	<td><?php echo $ds['ho_ten']?></td>
 				    	<td><?php 
-				    		$sql="select * from nguoidung,luutru where nguoidung.ma_nd=luutru.ma_nd and luutru.ma_nd='".$ds['ma_nd']."'";
+				    		$sql="select * from nguoidung,luutru where nguoidung.ma_nd=luutru.ma_nd and luutru.ma_nd='".$ds['ma_nd']."' and ma_bt='".$ma_btvn."'";
 				    		$data=laydata($sql);
 				    		if($data!=null && count($data)>0){
 				    			echo 'Hoàn Thành';
@@ -131,24 +130,6 @@ if(isset($_GET['ma_btvn'])){
 		margin-bottom: 20px;
 	}
 </style>
-<script type="text/javascript">
-	function xoasv(ma_nd,a) {
-		option=confirm('bạn có muốn xóa không')
-		if(!option){
-			return
-		}
-		var ma="";
-		if(a==1){
-			ma="gv-"+ma_nd;
-		}
-		else{
-			ma="sv-"+ma_nd;
-		}
-		$.post('ajax/xoa.php',{'ma_nd':ma},function(data) {
-			alert(data)
-			 window.location="qlNguoidung.php";
-		})
-	}
-</script>
+
 </body>
 </html>

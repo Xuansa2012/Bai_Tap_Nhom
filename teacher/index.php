@@ -4,7 +4,7 @@ require_once('../khungtrang/sesion.php');
 <!DOCTYPE html>
 <html>
 <head>
-	<title>admin</title>
+	<title>Teacher</title>
 	<?php require_once('../khungtrang/link.php')?>;
     <style type="text/css">
 		.than{width: 100%;height: auto; margin-top: 40px;background-color: #FFFAF0;font-size: 20px;}
@@ -35,9 +35,6 @@ require_once('../khungtrang/sesion.php');
       			 $.ajax({  
                    url:"ajax/bolocGV.php?gv="+mon,  
                    method:"POST",
-                   /*data:  new FormData(this),
-					contentType: false,
-					cache: false,*/  
                    success: function(a){   
                       $('#table').html(a);
                       //alert(a);
@@ -62,10 +59,9 @@ require_once('../khungtrang/sesion.php');
       		$("#timkiem").on('submit',function(e){
       			e.preventDefault();
       			var monhoc=$('#bolocMH').val();
-      			var giaovien=$('#bolocGV').val();
       			var loaide=$('#bolocLD').val();
       			 $.ajax({  
-                   url:"ajax/boloc.php?monhoc="+monhoc+"&&giaovien="+giaovien+"&&bolocLD="+loaide,  
+                   url:"ajax/boloc.php?monhoc="+monhoc+"&&bolocLD="+loaide,  
                    /*method:"POST",
                    data:  new FormData(this),
 					contentType: false,
@@ -159,31 +155,10 @@ require_once('../khungtrang/sesion.php');
 					    </thead>
 					    <?php 
 					    	$stt=1;
-					    	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld and nguoidung.ma_pl='".$ma_pl."'and email='".$email."'";
-					    	date_default_timezone_set("Asia/Ho_Chi_Minh");
-					    	$dateNow=date("Y-m-d H:i:s");
+					    	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld and email='".$email."'";
 					    	$data=laydata($sql);
 					    	foreach($data as $monhoc){
-								$diff = abs(strtotime($monhoc['thoigian_kt'])-strtotime($dateNow));
-								$years = floor($diff / (365*60*60*24));
-								$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-								$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24) / (60*60*24));
-								$hours = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24) / (60*60));
-								$minutes = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24 - $hours*60*60) / 60);
-								$seconds = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24 - $hours*60*60 - $minutes*60));
-								$ht=0;
-								if($days>0){
-									$ht="còn ".$days. " ngày";
-								}
-								else if($hours>0){
-									$ht="còn ".$hours. " giờ";
-								}
-								else if($minutes>0){
-									$ht="còn ".$minutes. " phút";
-								}
-								else if($seconds>0){
-									$ht="còn ".$seconds. " giây";
-								}
+								$ht=thoigian($monhoc['thoigian_kt']);
 					    ?>
 					    <tbody>
 						    <tr>
@@ -191,11 +166,16 @@ require_once('../khungtrang/sesion.php');
 						        <td><?php echo $monhoc['ten_bt']?></td>
 						        <td><?php echo $monhoc['ten_mon_hoc']?></td>
 						        <td>
-						        	<?php $sql="select count(stt) as tong from luutru,btvn,monhoc where btvn.ma_bt=luutru.ma_bt and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and monhoc.ma_mon_hoc='".$monhoc['ma_mon_hoc']."'";
+						        	<?php
+						        	$sql="select DISTINCT ma_nd  from luutru where ma_bt='".$monhoc['ma_bt']."'";
 						        	$data = laydata($sql);
+						        	$tong=0;
 						        	if($data!=null && count($data)>0){
-						        		$tong=$data[0]['tong'];
-						        	}else{ $tong=0;}
+						        		foreach($data as $luu){
+						        			$tong++;
+						        		}
+						        	}
+
 						        	echo $tong?>
 						        </td>
 						        <td><?php echo $monhoc['ten_ld']?></td>

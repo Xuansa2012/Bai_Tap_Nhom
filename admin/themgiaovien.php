@@ -87,9 +87,9 @@
 		else{
 			$img=$target_file;
 		}
-		$sql="insert into nguoidung values('".$ma_sv."','".$img."','12345678','','".$hoTen."','".$ngaySinh."','".$gioiTinh."','".$diaChi."','".$email."','".$soDT."','gv')";
+		$sql="insert into nguoidung values('".$ma_sv."','".$img."','12345678','".$hoTen."','".$ngaySinh."','".$gioiTinh."','".$diaChi."','".$email."','".$soDT."','gv')";
 		xuly($sql);
-		header("location:hello.php");
+		header("location:qlNguoidung.php");
 	}
 
 ?>
@@ -118,7 +118,7 @@
  				var img=$('#uploadImage').val();
  				var img=img.slice(11);
  				$.ajax({  
-					url:"../xulyanh.php?img="+img,  
+					url:"ajax/xulyanh.php?img="+img,  
 					type: "POST",
 					/*data:  new FormData(this),
 					contentType: false,
@@ -226,7 +226,7 @@
 							<?php 
 								$mang = explode(".", $target_file);
 								if(count($mang)>1){
-									echo '<img src="'.$target_file.'">';
+									echo '<img src="../'.$target_file.'">';
 								}
 							?>
 						</div>
@@ -238,6 +238,7 @@
 						<div class="col-sm-5"></div>
 					</div>
 				</form>
+				
 			</div>
 		</div>
 	</div>

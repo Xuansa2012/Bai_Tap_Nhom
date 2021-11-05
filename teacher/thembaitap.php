@@ -11,12 +11,7 @@ require_once('../khungtrang/sesion.php');
 	else{
 		$target_file="";
 	}
-	if(isset($_COOKIE['file'])){
-		$mang = explode(".", $target_file);
-		if(count($mang)<=1){
-			$target_file=$_COOKIE['file'];
-		}
-	}
+	
 	if(isset($_POST['ten_bt'])){
 		$ten_bt=$_POST['ten_bt'];
 	}
@@ -39,13 +34,13 @@ require_once('../khungtrang/sesion.php');
 		}
 		$sql="insert into btvn values('".$ma_bt."','".$ten_bt."','".$ma_mon."','".$date."','tl','".$file."')";
 		xuly($sql);
-		header("location:giaovien.php");
+		header("location:index.php");
 	}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>admin</title>
+	<title>Teacher</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style2.css">

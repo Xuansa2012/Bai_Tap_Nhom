@@ -4,10 +4,10 @@ require_once('../../khungtrang/sesion.php');
 $mon=$_GET['mon'];
 $sql="";
 if($mon==1){
-	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld";
+	$sql= "select * from nguoidung,monhoc where nguoidung.ma_nd=monhoc.ma_nd";
 }
 else{
-	$sql="select * from nguoidung,btvn,monhoc,loai_de where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_mon_hoc=btvn.ma_mon_hoc and loai_de.ma_ld=btvn.ma_ld and monhoc.ma_mon_hoc='".$mon."'";
+	$sql= "select * from nguoidung,monhoc where nguoidung.ma_nd=monhoc.ma_nd and monhoc.ma_nd='".$mon."'";
 }
 ?>
 <table class="table table-hover" id="table">

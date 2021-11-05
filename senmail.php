@@ -51,12 +51,13 @@
                 cache:false,                // To unable request pages to be cached  
                 processData:false,          // To send DOMDocument or non processed data file it is set to false    
                 success: function(a){
-                	if(a=="true"){
-                		alert("mail ko tồn tại");
+                	if(a==true){
+                		alert("emai không tồn tại");
                 	}
                 	else{
-                		alert("thành công");
+                		alert("Thành công! vui lòng kiểm tra mail của bạn");
                 	}
+                	
                 }
           })
       })
@@ -79,7 +80,7 @@
 								<p class="text" style="margin-left: 100px;">Bạn vui lòng điền thông tin bên dưới</p>
                                <br>
                                 <div class="control">
-                                    <input name="email" type="email" class="form-control" placeholder="Vui lòng điền email của trường đã cấp" value="">
+                                    <input name="email" type="email" class="form-control" placeholder="Vui lòng điền email cá nhân của bạn" value="">
                                 </div>
 
                             </div>

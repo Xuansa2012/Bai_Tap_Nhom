@@ -12,12 +12,14 @@
           }
      ?>
       <div id="pate">
-                <?php $sql ="select * from luutru,nguoidung where nguoidung.ma_nd=luutru.ma_nd and ma_bt='".$ma_bt."'";
+                <?php $sql ="select * from luutru,nguoidung where nguoidung.ma_nd=luutru.ma_nd and ma_bt='".$ma_bt."' and nguoidung.ma_nd='".$ma_nd."'";
                     $data=laydata($sql);
                     if($data!=null && count($data)>0){
                          echo '<div>đã nộp</div>';
+                         $lan=0;
                          foreach($data as $ds){
-                              echo '<div><a href="taitailieu.php?maTL=../giaovien/'.$ds['bai_lam'].'">đề bài</a></div>';     
+                              $lan++;
+                              echo '<div><a href="taitailieu.php?maTL='.$ds['bai_lam'].'">bài làm lần '.$lan.'</a></div>';     
                          }
                          
                     }?>

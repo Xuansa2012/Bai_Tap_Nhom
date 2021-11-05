@@ -100,7 +100,7 @@
 						<span class="txt1">
 							Forgot
 						</span>
-						<a class="txt2" href="../student/senmail.php">
+						<a class="txt2" href="senmail.php">
 							Username / Password?
 						</a>
 					</div>

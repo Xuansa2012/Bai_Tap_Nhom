@@ -1,2 +1,2 @@
 <?php 
- echo '<embed src="../giaovien/'.$_GET['maTL'].'" type="application/pdf"   height="1000px" width="100%">';
+ echo '<embed src="../teacher/'.$_GET['maTL'].'" type="application/pdf"   height="1000px" width="100%">';

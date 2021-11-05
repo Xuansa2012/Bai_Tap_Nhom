@@ -67,7 +67,7 @@ if(isset($_GET['ma_nd'])){
 			<div class="row">
 				<div class="col-sm-3">
 					<?php if($img==""|| $img==null){?>
-                    	<img src="../images/img-01.png" height="250px">
+                    	<img src="../images/macdinh.png" height="250px">
                 	<?php }else{?>
                     	<img src="../<?php echo $img?>" height="250px">
                 	<?php }?>

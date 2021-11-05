@@ -1,3 +1,3 @@
 <?php 
-echo '<img src="images'.$img=$_GET['img'].'">';
+echo '<img src="../images'.$img=$_GET['img'].'">';
 ?>
