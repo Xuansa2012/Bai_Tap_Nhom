@@ -57,20 +57,14 @@ $ma_bt=$_GET['maBT'];
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <style type="text/css">
-		.than{width: 100%;height: auto; margin-top: 40px;}
-		.dt1{width: 100%;height:250px;}
-		.container{width: 100%;height: 200px;background-color: #FAF0E6;float: left}
-		.thanh{width: 100%;height: 40px;background-color: #6A5ACD;padding-top: 8px;padding-left: 10px;color: white;}
-		.nguoidung{width: 20%;height: 150px;background-color: #DCDCDC;margin-top: 20px;margin-left: 40px;float: left;text-align: center;border: 1px;
-			border-radius: 10px;}
-		.nguoidung:hover{box-shadow: 5px 5px 5px 5px #AAA;}
-		.nhan{width: 100px;height: 50px;margin: 0 auto;margin-top: 30px;font-size: 50px;padding-top: -10px;}
-		.chu{width: 100%;height: 40px;background-color: #6A5ACD;padding-left: 10px;padding-top: 8px;color: white;}
-		.bang{width: 100%;height: 200px;}
-		.clear{
-			width: 100%;
-			height: 10px;
+		.than{width: 100%;height: auto; margin-top: 40px;background-color: #FFFAF0;font-size: 20px ;}
+		body{
+			font-size: 20px;
 		}
+		
+		.container{width: 100%;height: 200px;background-color: #FAF0E6;float: left}
+		.thanh{width: 100%;height: 40px;background-color: #6A5ACD;padding-top: 8px;padding-left: 10px;color: white;margin-top: 50px;}
+		
 	</style>
 </head>
 <body>
@@ -81,7 +75,7 @@ $ma_bt=$_GET['maBT'];
 		<nav class="navbar navbar-expand-lg " style="background-color: #7386D5;width: 100%;height: 50px;position: absolute;top:0;left:0">
 			<div class="container-fluid">
 				<div class="navbar-header" style="position: absolute;:left: 0;">
-					<a class="navbar-brand" href="#"><i class="fas fa-home"></i> Trang chủ / Bài tập <?php echo $ten_bt?></a>
+					<a class="navbar-brand" href="index.php"style="color: black;font-size: 20px;"><i class="fas fa-home"></i> Trang chủ / Bài tập <?php echo $ten_bt?></a>
 				</div>    
 				<div class="navbar-header" style="position: absolute;right: 0;">
 					<a class="navbar-brand" href="#"><i class="fas fa-user-tie"></i> <?php echo $ho_ten?></a>
@@ -90,11 +84,14 @@ $ma_bt=$_GET['maBT'];
 		</nav>
 		<div class="than">
 			<div>Bài tập <?php echo $ten_bt?></div>
+			<br>
 			<div>Môn học <?php echo $ten_mon?></div>
+			<br>
 			<div>Giáo viên <?php echo $ten_gv?></div>
+			<br>
 			<div>Hạn làm bài <?php echo $ht?></div>
-			<?php echo '<div><a href="taitailieu.php?maTL='.$de_bai.'">đề bài</a></div>';?>
-			  <div class="thanh">Nộp bài</div>
+			<?php echo '<div style="margin-left:500px;font-size:25px;"><a href="taitailieu.php?maTL='.$de_bai.'">Đề bài</a></div>';?>
+			  <div class="thanh" >Nộp bài</div>
 			   <form id="upload_csv" method="post" enctype="multipart/form-data">  
             		<div class="row" style="margin-left: 20px">
                  
@@ -107,14 +104,14 @@ $ma_bt=$_GET['maBT'];
                      <div style="clear:both"></div>  
                 </div>
             	</form>
-            	 <div class="thanh">bài tập</div>
+            	 <div class="thanh">Trạng thái </div>
             	 <div id="pate">
             	 <?php $sql ="select * from luutru,nguoidung where nguoidung.ma_nd=luutru.ma_nd and ma_bt='".$ma_bt."'";
             	 	$data=laydata($sql);
             	 	if($data!=null && count($data)>0){
-            	 		echo '<div>đã nộp</div>';
+            	 		echo '<div>Đã nộp</div>';
             	 		foreach($data as $ds){
-            	 			echo '<div><a href="taitailieu.php?maTL=../giaovien/'.$ds['bai_lam'].'">bài làm</a></div>';	
+            	 			echo '<div><a href="taitailieu.php?maTL=../teacher/'.$ds['bai_lam'].'">bài làm</a></div>';	
             	 		}
             	 		
             	 	}?>

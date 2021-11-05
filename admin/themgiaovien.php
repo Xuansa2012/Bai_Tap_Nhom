@@ -108,7 +108,8 @@
 		img{
 			height: 100px;
 		}
-		.than{width: 100%;height: auto; margin-top: 40px;}
+		.than{width: 100%;height: auto; margin-top: 40px;background-color: #FFFAF0;font-size: 20px;padding-left: 100px;padding-top: 20px;}
+		body{font-size: 20px}
 	</style>
 	<script type="text/javascript">
  		$(document).ready(function () {
@@ -117,7 +118,7 @@
  				var img=$('#uploadImage').val();
  				var img=img.slice(11);
  				$.ajax({  
-					url:"xulyanh.php?img="+img,  
+					url:"../xulyanh.php?img="+img,  
 					type: "POST",
 					/*data:  new FormData(this),
 					contentType: false,
@@ -137,7 +138,7 @@
 			<nav class="navbar navbar-expand-lg " style="background-color: #7386D5;width: 100%;height: 50px;position: absolute;top:0;left:0">
 				<div class="container-fluid">
 					<div class="navbar-header" style="position: absolute;:left: 0;">
-						<a class="navbar-brand" href="#"><i class="fas fa-home"></i> Trang chủ / Thêm Giáo Viên</a>
+						<a class="navbar-brand" href="index.php"><i class="fas fa-home"></i> Trang chủ / Thêm Giáo Viên</a>
 					</div>    
 					<div class="navbar-header" style="position: absolute;right: 0;">
 						<a class="navbar-brand" href="#"><i class="fas fa-user-tie"></i> admin</a>
@@ -148,7 +149,7 @@
 				<form action="" id="form" method="post" enctype="multipart/form-data">	
 					<div class="row">
 						<div class="col-sm-3">
-							<label for="hoTen" class="kc-form-input">Họ Tên Sinh Viên (*) :</label>
+							<label for="hoTen" class="kc-form-input">Họ Tên Giáo Viên (*) :</label>
 						</div>
 						<div class="col-sm-4">
 							<input type="text" class="form-control" id="hoTen" placeholder="Họ Tên Giáo Viên" name="hoTen" value="<?php echo $hoTen?>">
@@ -204,13 +205,13 @@
 
 					<div class="row kc-form-input">
 						<div class="col-sm-3"><label for="hoTen" class="kc-form-input">Email:</label></div>
-						<div class="col-sm-4"><input type="Email" class="form-control" id="email" placeholder="Enter eamil" name="email" value="<?php echo $email?>"></div>
+						<div class="col-sm-4"><input type="Email" class="form-control" id="email" placeholder=" email" name="email" value="<?php echo $email?>"></div>
 						<div class="col-sm-5"><label for="hoTen" class="kc-form-input"><?php echo $err_email?></label></div>
 					</div>
 
 					<div class="row kc-form-input">
 						<div class="col-sm-3"><label for="hoTen" class="kc-form-input">Số điện thoại:</label></div>
-						<div class="col-sm-4"><input type="text" class="form-control" id="soDT" placeholder="Enter Ngày Sinh" name="soDT" value="<?php echo $soDT?>"></div>
+						<div class="col-sm-4"><input type="text" class="form-control" id="soDT" placeholder="Số điện thoại" name="soDT" value="<?php echo $soDT?>"></div>
 						<div class="col-sm-5"><label for="hoTen" class="kc-form-input"><?php echo $err_soDT?></label></div>
 					</div>
 					<div class="row kc-form-input">
@@ -233,7 +234,7 @@
 					</div>
 					<div class="row kc-form-input">
 						<div class="col-sm-2"></div>
-						<div class="col-sm-4"><button type="submit" id="submit" class="btn btn-primary" style="margin-top: 15px;">Submit</button></div>
+						<div class="col-sm-4" style="margin-left:100px;"><button type="submit" id="submit" class="btn btn-primary" style="margin-top: 15px;">Thêm</button></div>
 						<div class="col-sm-5"></div>
 					</div>
 				</form>

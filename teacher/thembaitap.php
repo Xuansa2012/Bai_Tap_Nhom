@@ -71,7 +71,8 @@ require_once('../khungtrang/sesion.php');
 		.css_1hang{
 			float: left;
 		}
-		.than{width: 100%;height: auto; margin-top: 40px;background-color: #FAF0E6;}
+		.than{width: 100%;height: auto; margin-top: 40px;background-color: #FFFAF0;font-size: 20px;padding-left: 100px;padding-top: 20px;}
+		
 		.khunganhMT{
 			width: 100px;
 			height: 110px;
@@ -130,7 +131,7 @@ require_once('../khungtrang/sesion.php');
 			<nav class="navbar navbar-expand-lg " style="background-color: #7386D5;width: 100%;height: 50px;position: absolute;top:0;left:0">
 				<div class="container-fluid">
 					<div class="navbar-header" style="position: absolute;:left: 0;">
-						<a class="navbar-brand" href="#" style="color:black;"><i class="fas fa-home"></i> Trang chủ / Thêm bài tập</a>
+						<a class="navbar-brand" href="index.php" style="color:black;"><i class="fas fa-home"></i> Trang chủ / Thêm bài tập</a>
 					</div>    
 					<div class="navbar-header" style="position: absolute;right: 0;">
 						<a class="navbar-brand" href="#"style="color:black;"><i class="fas fa-user-tie"></i><?php echo $ho_ten?></a>
@@ -168,9 +169,9 @@ require_once('../khungtrang/sesion.php');
 					</div>
 
 					<div class="row kc-form-input" style="margin-top: 10px;">
-						<div class="col-sm-3"><label for="hoTen" class="kc-form-input" style="margin-top: 10px;">hạn nộp</label>
+						<div class="col-sm-3"><label for="hoTen" class="kc-form-input" style="margin-top: 10px;">Hạn nộp</label>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-4" style="margin-left:-15px">
 							<div class="form-check kc-form-input">
 								<input type="date" class="form-control" id="hoTen" placeholder="" name="date" value="<?php echo $date?>">
 							</div>
@@ -179,7 +180,7 @@ require_once('../khungtrang/sesion.php');
 					</div>
 
 					<div class="row kc-form-input" style="margin-top: 10px;">
-						<div class="col-sm-3"><label for="hoTen" class="kc-form-input" style="margin-top: 10px;"xam>bài tập:</label></div>
+						<div class="col-sm-3"><label for="hoTen" class="kc-form-input" style="margin-top: 10px;"xam>Bài tập:</label></div>
 						<div class="col-sm-4" style="margin-top: 10px"><input id="uploadfile" type="file"  name="uploadfile" value="<?php echo $target_file?>"/></div>
 						<div class="col-sm-5"><label for="hoTen" class="kc-form-input">
 						</label></div>

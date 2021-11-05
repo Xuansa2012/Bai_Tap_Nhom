@@ -125,6 +125,9 @@ require_once('../khungtrang/sesion.php');
 			width: 100px;
 			height: 100px;
 		}
+		.than{width: 100%;height: auto; margin-top: 40px;background-color: #FFFAF0;font-size: 20px;padding-left: 100px;padding-top: 20px;}
+		body{font-size: 20px}
+	
 	</style>
 	<script type="text/javascript">
  		$(document).ready(function () {
@@ -272,7 +275,7 @@ require_once('../khungtrang/sesion.php');
 					</div>
 					<div class="row kc-form-input">
 						<div class="col-sm-2"></div>
-						<div class="col-sm-4"><button type="submit" id="submit" class="btn btn-primary" style="margin-top: 15px;">Submit</button></div>
+						<div class="col-sm-4"><button type="submit" id="submit" class="btn btn-primary" style="margin-top: 15px;margin-left:100px;">Thêm</button></div>
 						<div class="col-sm-5"></div>
 					</div>
 				</form>

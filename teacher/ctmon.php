@@ -58,19 +58,10 @@
             width: 100px;
             height: 100px;
         }
-    .tb1{width: 100%;height:250px;}
+
     .container{width: 100%;height: 200px;background-color: #FAF0E6;float: left}
     .thanh{width: 100%;height: 40px;background-color: #6A5ACD;padding-top: 8px;padding-left: 10px;color: white;}
-    .nguoidung{width: 20%;height: 150px;background-color: #DCDCDC;margin-top: 20px;margin-left: 40px;float: left;text-align: center;border: 1px;
-        border-radius: 10px;}
-    .nguoidung:hover{box-shadow: 5px 5px 5px 5px #AAA;}
-    .nhan{width: 100px;height: 50px;margin: 0 auto;margin-top: 30px;font-size: 50px;padding-top: -10px;}
-    .chu{width: 100%;height: 40px;background-color: #6A5ACD;padding-left: 10px;padding-top: 8px;color: white;}
-    .bang{width: 100%;height: 200px;}
-    .clear{
-        width: 100%;
-        height: 10px;
-    }
+    
     body{
         font-size: 20px;
     }
@@ -125,7 +116,7 @@
         <div class="row" style="margin-top:10px">
             <div class="col-sm-3">
                 <?php if($img==""|| $img==null){?>
-                    <img src="../images/img-01.png" height="250px">
+                    <img src="../images/book.png" height="200px" style="margin-left:20px">
                 <?php }else{?>
                     <img src="../<?php echo $img?>" height="250px">
                 <?php }?>

@@ -11,9 +11,9 @@ if(isset($_SESSION['email'])){
 		if($pl=='admin'){
 			header('location:admin/index.php');
 		}else if($pl=='gv'){
-			header('location:giaovien/giaovien.php');
+			header('location:teacher/index.php');
 		}else{
-			header('location:sinhvien/sinhvien.php');
+			header('location:student/index.php');
 		}
 	}
 }

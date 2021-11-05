@@ -11,7 +11,7 @@
 <nav id="sidebar" style="width: 15%;">
             <div class="sidebar-header" style="color: white;">
                 <?php if($img==""|| $img==null){?>
-                    <img src="../images/macdinh.png" height="150px" width="150px">
+                    <img src="../images/macdinh.png" style="width: 150px;height: 150px;">
                 <?php }else{?>
                     <img src="../<?php echo $img?>" height="150px" width="150px">
                 <?php }?>

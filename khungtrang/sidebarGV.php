@@ -21,8 +21,8 @@
         </div>
         
     <ul class="list-unstyled components">
-        <li><a href="../giaovien/themmon.php">Thêm môn học</a></li>
-        <li><a href="../giaovien/thembaitap.php">Thêm Bài Tập</a></li>
+        <li><a href="../teacher/themmon.php">Thêm môn học</a></li>
+        <li><a href="../teacher/thembaitap.php">Thêm Bài Tập</a></li>
 
         <li class="active">
             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-plus-square"></i>Quản lý môn </a>
